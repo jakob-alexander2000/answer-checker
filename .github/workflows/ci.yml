@@ -21,3 +21,16 @@ jobs:
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
+      - run: npm run build --workspace @answer-checker/web
+
+  action:
+    # Runs this repo's own GitHub Action on the six playground samples.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: checks
+        uses: ./
+        with:
+          config: examples/handbook/checks.yml
+          receipts: ${{ runner.temp }}/receipts
+      - run: echo "${{ steps.checks.outputs.passed }} of ${{ steps.checks.outputs.total }} as expected"

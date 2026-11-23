@@ -1,0 +1,92 @@
+law: MuSchG
+source: muschg_2018.md
+cases:
+  - id: muschg-01
+    question: Ab wann darf ich vor der Geburt nicht mehr arbeiten?
+    passage: Der Arbeitgeber darf eine schwangere Frau in den letzten sechs Wochen vor der Entbindung nicht beschäftigen (Schutzfrist vor der Entbindung), soweit sie sich nicht zur Arbeitsleistung ausdrücklich bereit erklärt.
+    faithful: Der Arbeitgeber darf eine schwangere Frau in den letzten sechs Wochen vor der Entbindung nicht beschäftigen, soweit sie sich nicht zur Arbeitsleistung ausdrücklich bereit erklärt.
+    paraphrase: In den letzten sechs Wochen vor der Geburt dürfen Sie nicht beschäftigt werden, es sei denn, Sie erklären sich ausdrücklich zur Arbeit bereit.
+    drifted: Der Arbeitgeber darf eine schwangere Frau in den letzten sechs Wochen vor der Entbindung nicht beschäftigen.
+    drift: omission
+    note: drops "soweit sie sich nicht ... bereit erklärt"
+
+  - id: muschg-02
+    question: Kann ich meine Bereitschaft, vor der Geburt zu arbeiten, zurücknehmen?
+    passage: Sie kann die Erklärung nach Satz 1 jederzeit mit Wirkung für die Zukunft widerrufen.
+    faithful: Sie können die Erklärung jederzeit mit Wirkung für die Zukunft widerrufen.
+    paraphrase: Ja, Sie können das jederzeit für die Zukunft zurückziehen.
+    drifted: Sie können die Erklärung nur mit einer Frist von zwei Wochen widerrufen.
+    drift: support
+    note: invents a two-week notice
+
+  - id: muschg-03
+    question: Wie lange gilt die Schutzfrist nach der Geburt?
+    passage: Der Arbeitgeber darf eine Frau bis zum Ablauf von acht Wochen nach der Entbindung nicht beschäftigen (Schutzfrist nach der Entbindung).
+    faithful: Der Arbeitgeber darf eine Frau bis zum Ablauf von acht Wochen nach der Entbindung nicht beschäftigen.
+    paraphrase: Nach der Geburt dürfen Sie acht Wochen lang nicht beschäftigt werden.
+    drifted: Der Arbeitgeber darf eine Frau bis zum Ablauf von sechs Wochen nach der Entbindung nicht beschäftigen.
+    drift: qualifier
+    note: eight weeks became six
+
+  - id: muschg-04
+    question: Wann verlängert sich die Schutzfrist nach der Geburt?
+    passage: Die Schutzfrist nach der Entbindung verlängert sich auf zwölf Wochen
+    faithful: Die Schutzfrist nach der Entbindung verlängert sich auf zwölf Wochen, etwa bei Frühgeburten und Mehrlingsgeburten.
+    paraphrase: Bei Frühchen oder Zwillingen dauert sie zwölf statt acht Wochen.
+    drifted: Die Schutzfrist nach der Entbindung verlängert sich auf zehn Wochen.
+    drift: qualifier
+    note: twelve weeks became ten
+
+  - id: muschg-05
+    question: Darf ich als Schwangere abends arbeiten?
+    passage: Der Arbeitgeber darf eine schwangere oder stillende Frau nicht zwischen 20 Uhr und 6 Uhr beschäftigen. Er darf sie bis 22 Uhr beschäftigen, wenn die Voraussetzungen des § 28 erfüllt sind.
+    faithful: Der Arbeitgeber darf eine schwangere oder stillende Frau nicht zwischen 20 Uhr und 6 Uhr beschäftigen. Er darf sie bis 22 Uhr beschäftigen, wenn die Voraussetzungen des § 28 erfüllt sind.
+    paraphrase: Zwischen 20 und 6 Uhr nicht. Bis 22 Uhr nur, wenn die Voraussetzungen von § 28 vorliegen.
+    drifted: Der Arbeitgeber darf eine schwangere oder stillende Frau bis 22 Uhr beschäftigen.
+    drift: omission
+    note: drops the 20-to-6 ban and the § 28 condition
+
+  - id: muschg-06
+    question: Darf ich als Schwangere sonntags arbeiten?
+    passage: Der Arbeitgeber darf eine schwangere oder stillende Frau nicht an Sonn- und Feiertagen beschäftigen. Er darf sie an Sonn- und Feiertagen nur dann beschäftigen, wenn
+    faithful: Der Arbeitgeber darf eine schwangere oder stillende Frau nicht an Sonn- und Feiertagen beschäftigen. Er darf sie nur dann beschäftigen, wenn bestimmte Voraussetzungen erfüllt sind, etwa ihre ausdrückliche Bereitschaft.
+    paraphrase: Grundsätzlich nicht. Ausnahmen gibt es nur unter bestimmten Voraussetzungen, zum Beispiel wenn Sie ausdrücklich zustimmen.
+    drifted: Der Arbeitgeber darf eine schwangere Frau an Sonn- und Feiertagen beschäftigen.
+    drift: support
+    note: reverses the ban
+
+  - id: muschg-07
+    question: Muss ich für Vorsorgeuntersuchungen Urlaub nehmen?
+    passage: Der Arbeitgeber hat eine Frau für die Zeit freizustellen, die zur Durchführung der Untersuchungen im Rahmen der Leistungen der gesetzlichen Krankenversicherung bei Schwangerschaft und Mutterschaft erforderlich sind.
+    faithful: Der Arbeitgeber hat Sie für die Zeit freizustellen, die zur Durchführung der Untersuchungen bei Schwangerschaft und Mutterschaft erforderlich ist.
+    paraphrase: Nein, Ihr Arbeitgeber muss Sie für die nötigen Schwangerschaftsuntersuchungen freistellen.
+    drifted: Sie müssen für Untersuchungen bei Schwangerschaft Urlaub nehmen.
+    drift: support
+    note: reverses the rule
+
+  - id: muschg-08
+    question: Wie viel Zeit zum Stillen steht mir bei der Arbeit zu?
+    passage: Der Arbeitgeber hat eine stillende Frau auf ihr Verlangen während der ersten zwölf Monate nach der Entbindung für die zum Stillen erforderliche Zeit freizustellen, mindestens aber zweimal täglich für eine halbe Stunde oder einmal täglich für eine Stunde.
+    faithful: Der Arbeitgeber hat eine stillende Frau auf ihr Verlangen während der ersten zwölf Monate nach der Entbindung für die zum Stillen erforderliche Zeit freizustellen, mindestens aber zweimal täglich für eine halbe Stunde oder einmal täglich für eine Stunde.
+    paraphrase: In den ersten zwölf Monaten nach der Geburt muss er Sie auf Verlangen zum Stillen freistellen, wenigstens zweimal am Tag eine halbe Stunde oder einmal eine Stunde.
+    drifted: Der Arbeitgeber hat eine stillende Frau für die zum Stillen erforderliche Zeit freizustellen, mindestens aber zweimal täglich für eine halbe Stunde.
+    drift: qualifier
+    note: drops "während der ersten zwölf Monate" and "auf ihr Verlangen"
+
+  - id: muschg-09
+    question: Wann sollte ich meinem Arbeitgeber die Schwangerschaft mitteilen?
+    passage: Eine schwangere Frau soll ihrem Arbeitgeber ihre Schwangerschaft und den voraussichtlichen Tag der Entbindung mitteilen, sobald sie weiß, dass sie schwanger ist.
+    faithful: Eine schwangere Frau soll ihrem Arbeitgeber ihre Schwangerschaft und den voraussichtlichen Tag der Entbindung mitteilen, sobald sie weiß, dass sie schwanger ist.
+    paraphrase: Sobald Sie es wissen, sollten Sie Ihrem Arbeitgeber die Schwangerschaft und den errechneten Geburtstermin mitteilen.
+    drifted: Eine schwangere Frau muss ihrem Arbeitgeber die Schwangerschaft spätestens im dritten Monat mitteilen.
+    drift: support
+    note: invents a deadline and turns "soll" into "muss"
+
+  - id: muschg-10
+    question: Darf mir während der Schwangerschaft gekündigt werden?
+    passage: Die Kündigung gegenüber einer Frau ist unzulässig
+    faithful: Die Kündigung gegenüber einer Frau ist während ihrer Schwangerschaft unzulässig.
+    paraphrase: Nein, während der Schwangerschaft ist eine Kündigung nicht zulässig.
+    drifted: Die Kündigung gegenüber einer schwangeren Frau ist mit einer verlängerten Kündigungsfrist zulässig.
+    drift: support
+    note: reverses the ban

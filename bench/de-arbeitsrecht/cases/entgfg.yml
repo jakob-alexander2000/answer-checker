@@ -1,0 +1,92 @@
+law: EntgFG
+source: entgfg.md
+cases:
+  - id: entgfg-01
+    question: Wie lange zahlt mein Arbeitgeber mein Gehalt weiter, wenn ich krank bin?
+    passage: Wird ein Arbeitnehmer durch Arbeitsunfähigkeit infolge Krankheit an seiner Arbeitsleistung verhindert, ohne daß ihn ein Verschulden trifft, so hat er Anspruch auf Entgeltfortzahlung im Krankheitsfall durch den Arbeitgeber für die Zeit der Arbeitsunfähigkeit bis zur Dauer von sechs Wochen.
+    faithful: Wenn Sie infolge Krankheit arbeitsunfähig sind, ohne dass Sie ein Verschulden trifft, haben Sie Anspruch auf Entgeltfortzahlung durch den Arbeitgeber bis zur Dauer von sechs Wochen.
+    paraphrase: Sind Sie unverschuldet krank und können nicht arbeiten, zahlt Ihr Arbeitgeber bis zu sechs Wochen lang Ihr Gehalt weiter.
+    drifted: Wenn Sie krank sind, zahlt Ihr Arbeitgeber Ihr Gehalt bis zur Dauer von sechs Wochen weiter.
+    drift: omission
+    note: drops "ohne daß ihn ein Verschulden trifft"
+
+  - id: entgfg-02
+    question: Wie lange gibt es Entgeltfortzahlung im Krankheitsfall?
+    passage: so hat er Anspruch auf Entgeltfortzahlung im Krankheitsfall durch den Arbeitgeber für die Zeit der Arbeitsunfähigkeit bis zur Dauer von sechs Wochen.
+    faithful: Sie haben Anspruch auf Entgeltfortzahlung im Krankheitsfall durch den Arbeitgeber für die Zeit der Arbeitsunfähigkeit bis zur Dauer von sechs Wochen.
+    paraphrase: Die Lohnfortzahlung bei Krankheit läuft höchstens sechs Wochen.
+    drifted: Sie haben Anspruch auf Entgeltfortzahlung im Krankheitsfall durch den Arbeitgeber für die Zeit der Arbeitsunfähigkeit bis zur Dauer von acht Wochen.
+    drift: qualifier
+    note: six weeks became eight
+
+  - id: entgfg-03
+    question: Habe ich in den ersten Wochen eines neuen Jobs Anspruch auf Lohnfortzahlung bei Krankheit?
+    passage: Der Anspruch nach Absatz 1 entsteht nach vierwöchiger ununterbrochener Dauer des Arbeitsverhältnisses.
+    faithful: Der Anspruch entsteht nach vierwöchiger ununterbrochener Dauer des Arbeitsverhältnisses.
+    paraphrase: Nein, die Entgeltfortzahlung greift erst, wenn Ihr Arbeitsverhältnis vier Wochen ohne Unterbrechung besteht.
+    drifted: Der Anspruch entsteht ab dem ersten Tag des Arbeitsverhältnisses.
+    drift: support
+    note: invents a first-day entitlement
+
+  - id: entgfg-04
+    question: Was gilt, wenn ich wegen derselben Krankheit wieder arbeitsunfähig werde?
+    passage: Wird der Arbeitnehmer infolge derselben Krankheit erneut arbeitsunfähig, so verliert er wegen der erneuten Arbeitsunfähigkeit den Anspruch nach Satz 1 für einen weiteren Zeitraum von höchstens sechs Wochen nicht, wenn
+    faithful: Werden Sie infolge derselben Krankheit erneut arbeitsunfähig, verlieren Sie den Anspruch für einen weiteren Zeitraum von höchstens sechs Wochen nicht, wenn bestimmte Fristen erfüllt sind.
+    paraphrase: Bei erneuter Arbeitsunfähigkeit wegen derselben Krankheit können Sie unter bestimmten Fristen noch einmal bis zu sechs Wochen Lohnfortzahlung bekommen.
+    drifted: Werden Sie infolge derselben Krankheit erneut arbeitsunfähig, haben Sie wieder Anspruch auf sechs Wochen.
+    drift: qualifier
+    note: drops "höchstens" and the conditions
+
+  - id: entgfg-05
+    question: Wann bekomme ich bei derselben Krankheit erneut sechs Wochen Lohnfortzahlung?
+    passage: er vor der erneuten Arbeitsunfähigkeit mindestens sechs Monate nicht infolge derselben Krankheit arbeitsunfähig war oder
+    faithful: Wenn Sie vor der erneuten Arbeitsunfähigkeit mindestens sechs Monate nicht infolge derselben Krankheit arbeitsunfähig waren.
+    paraphrase: Dafür müssen Sie vorher wenigstens ein halbes Jahr lang nicht wegen derselben Krankheit ausgefallen sein.
+    drifted: Wenn Sie vor der erneuten Arbeitsunfähigkeit einige Zeit nicht infolge derselben Krankheit arbeitsunfähig waren.
+    drift: qualifier
+    note: '"mindestens sechs Monate" became "einige Zeit"'
+
+  - id: entgfg-06
+    question: Wann muss ich meinem Arbeitgeber meine Krankmeldung mitteilen?
+    passage: Der Arbeitnehmer ist verpflichtet, dem Arbeitgeber die Arbeitsunfähigkeit und deren voraussichtliche Dauer unverzüglich mitzuteilen.
+    faithful: Sie sind verpflichtet, dem Arbeitgeber die Arbeitsunfähigkeit und deren voraussichtliche Dauer unverzüglich mitzuteilen.
+    paraphrase: Sie müssen Ihrem Arbeitgeber sofort sagen, dass Sie krank sind und wie lange es voraussichtlich dauert.
+    drifted: Sie sind verpflichtet, dem Arbeitgeber die Arbeitsunfähigkeit innerhalb einer Woche mitzuteilen.
+    drift: support
+    note: invents a one-week deadline
+
+  - id: entgfg-07
+    question: Ab wann brauche ich eine ärztliche Bescheinigung?
+    passage: Dauert die Arbeitsunfähigkeit länger als drei Kalendertage, hat der Arbeitnehmer eine ärztliche Bescheinigung über das Bestehen der Arbeitsunfähigkeit sowie deren voraussichtliche Dauer spätestens an dem darauffolgenden Arbeitstag vorzulegen.
+    faithful: Dauert die Arbeitsunfähigkeit länger als drei Kalendertage, müssen Sie spätestens an dem darauffolgenden Arbeitstag eine ärztliche Bescheinigung vorlegen.
+    paraphrase: Sind Sie mehr als drei Kalendertage krank, brauchen Sie ab dem nächsten Arbeitstag ein ärztliches Attest.
+    drifted: Sie müssen eine ärztliche Bescheinigung vorlegen.
+    drift: omission
+    note: drops "länger als drei Kalendertage" and the deadline
+
+  - id: entgfg-08
+    question: Darf mein Arbeitgeber das Attest früher verlangen?
+    passage: Der Arbeitgeber ist berechtigt, die Vorlage der ärztlichen Bescheinigung früher zu verlangen.
+    faithful: Der Arbeitgeber ist berechtigt, die Vorlage der ärztlichen Bescheinigung früher zu verlangen.
+    paraphrase: Ja, Ihr Arbeitgeber kann das Attest auch schon vorher einfordern.
+    drifted: Der Arbeitgeber darf die ärztliche Bescheinigung erst nach drei Kalendertagen verlangen.
+    drift: support
+    note: reverses the rule
+
+  - id: entgfg-09
+    question: Wie hoch ist die Entgeltfortzahlung?
+    passage: Für den in § 3 Abs. 1 oder in § 3a Absatz 1 bezeichneten Zeitraum ist dem Arbeitnehmer das ihm bei der für ihn maßgebenden regelmäßigen Arbeitszeit zustehende Arbeitsentgelt fortzuzahlen.
+    faithful: Für den Zeitraum ist Ihnen das bei der für Sie maßgebenden regelmäßigen Arbeitszeit zustehende Arbeitsentgelt fortzuzahlen.
+    paraphrase: Sie bekommen das Gehalt weiter, das Ihnen für Ihre normale regelmäßige Arbeitszeit zusteht.
+    drifted: Für den Zeitraum sind Ihnen 70 Prozent des Arbeitsentgelts fortzuzahlen.
+    drift: support
+    note: invents 70 percent (that is Krankengeld, not this rule)
+
+  - id: entgfg-10
+    question: Zählen Überstunden bei der Lohnfortzahlung mit?
+    passage: Zum Arbeitsentgelt nach Absatz 1 gehören nicht das zusätzlich für Überstunden gezahlte Arbeitsentgelt und Leistungen für Aufwendungen des Arbeitnehmers
+    faithful: Zum fortgezahlten Arbeitsentgelt gehört nicht das zusätzlich für Überstunden gezahlte Arbeitsentgelt.
+    paraphrase: Nein, Überstundenvergütung wird bei der Lohnfortzahlung nicht berücksichtigt.
+    drifted: Zum fortgezahlten Arbeitsentgelt gehört auch das zusätzlich für Überstunden gezahlte Arbeitsentgelt.
+    drift: support
+    note: reverses the rule

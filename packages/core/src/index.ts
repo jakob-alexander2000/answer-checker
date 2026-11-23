@@ -11,6 +11,8 @@ export { keywordHits, runKeyword } from "./run";
 export { draftAnswer, toNaive as stripConditions } from "./strip";
 export { deltaBetween, readingFor } from "./voice/delta";
 export { VOICE_THRESHOLDS } from "./voice/lexicon";
+export { HANDBOOK, HANDBUCH, SAMPLES } from "./samples";
+export type { Sample } from "./samples";
 
 export const ENGINE = { name: "answer-checker", version: "0.1.0" } as const;
 

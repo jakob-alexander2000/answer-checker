@@ -1,0 +1,83 @@
+# The six playground samples as a test suite. Each faithful answer must pass,
+# each drifted one must fail the check named in expect_failed.
+# Synthetic handbooks, not real policies.
+name: handbook-samples
+cases:
+  - id: leave-faithful
+    question: How many days of annual leave do employees get?
+    sources:
+      - Annual leave. In practice, full-time employees only receive 30 days of paid annual leave after the probation period. Part-time staff receive a share that matches their contracted hours. Days are booked in the planning tool at least 10 working days ahead. A manager may refuse a date when the team cannot cover the work, and the refusal is a sentence in the tool, not a shrug. Unused days, up to 5, may be carried into the next calendar year and must be taken by the end of March. Days above 5 are lost. The atelier closes from 27 December through 31 December, and those closure days come out of the 30 days. A person who joins in the second half of the year receives a pro-rated share of the remaining year, still only after probation has ended. Booking a day and then not taking it, without telling the manager, counts as a missed day and is talked about in the next one-to-one.
+    answer: Full-time employees only receive 30 days of paid annual leave after the probation period.
+  - id: leave-drifted
+    question: How many days of annual leave do employees get?
+    sources:
+      - Annual leave. In practice, full-time employees only receive 30 days of paid annual leave after the probation period. Part-time staff receive a share that matches their contracted hours. Days are booked in the planning tool at least 10 working days ahead. A manager may refuse a date when the team cannot cover the work, and the refusal is a sentence in the tool, not a shrug. Unused days, up to 5, may be carried into the next calendar year and must be taken by the end of March. Days above 5 are lost. The atelier closes from 27 December through 31 December, and those closure days come out of the 30 days. A person who joins in the second half of the year receives a pro-rated share of the remaining year, still only after probation has ended. Booking a day and then not taking it, without telling the manager, counts as a missed day and is talked about in the next one-to-one.
+    answer: Employees receive 30 days of paid annual leave.
+    expect: fail
+    expect_failed:
+      - qualifier
+  - id: telework-faithful
+    question: May I work from home for 2 days a week?
+    sources:
+      - Telework. Staff may telework from their registered home address for up to 2 days each week, unless they are in the probation period. The days are agreed with the manager for the week ahead, on the Friday before. Client-site roles are not eligible for telework. The home address is the one on the personal file. Working from a cafe, a train, or another country is outside this rule. The atelier may ask for those days to be spent on site in a week when a client visit or a workshop needs the whole team, and the ask is made by Wednesday where that is possible. Kit used at home is the same kit as on site, and it comes back on the last day. A person who moves house updates the file before the next telework day. The day still has the same hours and the same availability on the team channel.
+    answer: Staff may telework from their registered home address for up to 2 days each week, unless they are in the probation period.
+  - id: telework-drifted
+    question: May I work from home for 2 days a week?
+    sources:
+      - Telework. Staff may telework from their registered home address for up to 2 days each week, unless they are in the probation period. The days are agreed with the manager for the week ahead, on the Friday before. Client-site roles are not eligible for telework. The home address is the one on the personal file. Working from a cafe, a train, or another country is outside this rule. The atelier may ask for those days to be spent on site in a week when a client visit or a workshop needs the whole team, and the ask is made by Wednesday where that is possible. Kit used at home is the same kit as on site, and it comes back on the last day. A person who moves house updates the file before the next telework day. The day still has the same hours and the same availability on the team channel.
+    answer: Staff may telework from their registered home address for up to 2 days each week.
+    expect: fail
+    expect_failed:
+      - omission
+  - id: everyone-faithful
+    question: Does every worker get these benefits?
+    sources:
+      - Who this text is for. This handbook applies only to people employed by Linden Atelier who work in Germany. It does not apply to contractors, agency workers, or staff of other group companies. Not every worker gets these benefits. A person who works in another country, or for another organisation, cannot use these pages to claim anything. Later sections say "staff" for that same narrow group, unless a sentence narrows the group again. A change of workplace country, even for a month, takes the person outside this text until they are back. Questions about the boundary go to the people team, and a guess by a manager is not enough to widen it.
+    answer: This handbook applies only to people employed by Linden Atelier who work in Germany.
+  - id: everyone-drifted
+    question: Does every worker get these benefits?
+    sources:
+      - Who this text is for. This handbook applies only to people employed by Linden Atelier who work in Germany. It does not apply to contractors, agency workers, or staff of other group companies. Not every worker gets these benefits. A person who works in another country, or for another organisation, cannot use these pages to claim anything. Later sections say "staff" for that same narrow group, unless a sentence narrows the group again. A change of workplace country, even for a month, takes the person outside this text until they are back. Questions about the boundary go to the people team, and a guess by a manager is not enough to widen it.
+    answer: Every worker gets these benefits.
+    expect: fail
+    expect_failed:
+      - scope
+  - id: urlaub-faithful
+    question: Wie viele Urlaubstage bekommen Vollzeitbeschäftigte?
+    sources:
+      - Urlaub. Vollzeitbeschäftigte erhalten nach der Probezeit 30 Urlaubstage pro Kalenderjahr. Teilzeitkräfte erhalten einen Anteil, der ihrer vertraglichen Arbeitszeit entspricht.
+    answer: Vollzeitbeschäftigte erhalten nach der Probezeit 30 Urlaubstage pro Kalenderjahr.
+  - id: urlaub-drifted
+    question: Wie viele Urlaubstage bekommen Vollzeitbeschäftigte?
+    sources:
+      - Urlaub. Vollzeitbeschäftigte erhalten nach der Probezeit 30 Urlaubstage pro Kalenderjahr. Teilzeitkräfte erhalten einen Anteil, der ihrer vertraglichen Arbeitszeit entspricht.
+    answer: Vollzeitbeschäftigte erhalten 30 Urlaubstage pro Kalenderjahr.
+    expect: fail
+    expect_failed:
+      - qualifier
+  - id: mobil-faithful
+    question: Wie viele Tage darf ich mobil arbeiten?
+    sources:
+      - Mobiles Arbeiten. Mobiles Arbeiten ist an bis zu 2 Tagen pro Woche möglich, es sei denn, die Rolle erfordert Anwesenheit beim Kunden.
+    answer: Mobiles Arbeiten ist an bis zu 2 Tagen pro Woche möglich, es sei denn, die Rolle erfordert Anwesenheit beim Kunden.
+  - id: mobil-drifted
+    question: Wie viele Tage darf ich mobil arbeiten?
+    sources:
+      - Mobiles Arbeiten. Mobiles Arbeiten ist an bis zu 2 Tagen pro Woche möglich, es sei denn, die Rolle erfordert Anwesenheit beim Kunden.
+    answer: Mobiles Arbeiten ist an bis zu 2 Tagen pro Woche möglich.
+    expect: fail
+    expect_failed:
+      - omission
+  - id: bonus-faithful
+    question: Wie viele Urlaubstage bekommen Vollzeitbeschäftigte?
+    sources:
+      - Urlaub. Vollzeitbeschäftigte erhalten nach der Probezeit 30 Urlaubstage pro Kalenderjahr. Teilzeitkräfte erhalten einen Anteil, der ihrer vertraglichen Arbeitszeit entspricht.
+    answer: Vollzeitbeschäftigte erhalten nach der Probezeit 30 Urlaubstage pro Kalenderjahr.
+  - id: bonus-drifted
+    question: Wie viele Urlaubstage bekommen Vollzeitbeschäftigte?
+    sources:
+      - Urlaub. Vollzeitbeschäftigte erhalten nach der Probezeit 30 Urlaubstage pro Kalenderjahr. Teilzeitkräfte erhalten einen Anteil, der ihrer vertraglichen Arbeitszeit entspricht.
+    answer: Vollzeitbeschäftigte erhalten nach der Probezeit 30 Urlaubstage pro Kalenderjahr. Zusätzlich gibt es einen Bonus für alle Abteilungen.
+    expect: fail
+    expect_failed:
+      - support

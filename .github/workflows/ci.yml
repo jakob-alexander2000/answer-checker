@@ -21,3 +21,30 @@ jobs:
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
+      - run: npm run build --workspace @answer-checker/web
+
+  action:
+    # Runs this repo's own GitHub Action on the six playground samples.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: checks
+        uses: ./
+        with:
+          config: examples/handbook/checks.yml
+          receipts: ${{ runner.temp }}/receipts
+      - run: echo "${{ steps.checks.outputs.passed }} of ${{ steps.checks.outputs.total }} as expected"
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t answer-checker:ci .
+      - name: Health, playground and one check
+        run: |
+          docker run -d --name ac -p 8787:8787 answer-checker:ci
+          for i in $(seq 1 30); do curl -sf localhost:8787/health && break; sleep 1; done
+          curl -sf localhost:8787/ -o /dev/null
+          curl -sf localhost:8787/v1/check -H 'content-type: application/json' \
+            -d '{"question":"Q?","answer":"Employees receive 30 days.","sources":["Full-time employees receive 30 days after the probation period."]}' \
+            | grep -q '"verdict":"fail"'

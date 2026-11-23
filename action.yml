@@ -1,0 +1,47 @@
+name: answer-checker
+description: Check your document chatbot's answers against their sources on every change. Writes a receipt and fails the build on a regression.
+author: jakob-alexander2000
+branding:
+  icon: check-square
+  color: gray-dark
+inputs:
+  config:
+    description: Path to your checks.yml
+    default: checks.yml
+  receipts:
+    description: Folder for dated receipts and latest.json. Commit it to compare runs.
+    default: checks/receipts
+  fail-on:
+    description: "any: fail on any case that isn't as expected. regression: fail only on cases that got worse or are new."
+    default: any
+outputs:
+  passed:
+    description: Cases as expected
+    value: ${{ steps.run.outputs.passed }}
+  total:
+    description: Cases run
+    value: ${{ steps.run.outputs.total }}
+  receipt:
+    description: Path to this run's receipt
+    value: ${{ steps.run.outputs.receipt }}
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 22
+    - name: Install answer-checker
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      run: npm ci --no-audit --no-fund --workspace @answer-checker/action --include-workspace-root
+    - id: run
+      name: Check answers
+      shell: bash
+      run: >
+        node --import "$ACTION_PATH/node_modules/tsx/dist/esm/index.mjs" "$ACTION_PATH/packages/action/src/cli.ts"
+        --config "$INPUT_CONFIG" --receipts "$INPUT_RECEIPTS" --fail-on "$INPUT_FAIL_ON"
+      env:
+        ACTION_PATH: ${{ github.action_path }}
+        INPUT_CONFIG: ${{ inputs.config }}
+        INPUT_RECEIPTS: ${{ inputs.receipts }}
+        INPUT_FAIL_ON: ${{ inputs.fail-on }}

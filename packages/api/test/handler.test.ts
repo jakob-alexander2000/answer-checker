@@ -88,3 +88,14 @@ describe("POST /v1/check", () => {
     expect(((await response.json()) as { ok: boolean }).ok).toBe(true);
   });
 });
+
+describe("static files", () => {
+  it("maps paths inside the root and refuses to leave it", async () => {
+    const { staticFile } = await import("../src/static");
+    expect(staticFile("/srv/web", "/")).toBe("/srv/web/index.html");
+    expect(staticFile("/srv/web", "/assets/app.js")).toBe("/srv/web/assets/app.js");
+    expect(staticFile("/srv/web", "/../etc/passwd")).toBeNull();
+    expect(staticFile("/srv/web", "/%2e%2e/etc/passwd")).toBeNull();
+    expect(staticFile("/srv/web", "/a\0b")).toBeNull();
+  });
+});

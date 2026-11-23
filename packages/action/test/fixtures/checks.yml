@@ -1,0 +1,17 @@
+name: handbook
+cases:
+  - id: leave-faithful
+    question: How many days of annual leave do employees get?
+    source_files: [source.md]
+    answer: Full-time employees receive 30 days of paid annual leave after the probation period.
+  - id: leave-drifted
+    question: How many days of annual leave do employees get?
+    source_files: [source.md]
+    answer: Employees receive 30 days of paid annual leave.
+    expect: fail
+    expect_failed: [qualifier]
+  - id: inline
+    question: Who gets a share?
+    sources:
+      - Part-time staff receive a share that matches their contracted hours.
+    answer: Part-time staff receive a share that matches their contracted hours.

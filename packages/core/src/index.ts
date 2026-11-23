@@ -1,5 +1,6 @@
 import { checkById, scoreAnswer, type CheckId, type CheckResult } from "./checks";
-import { coverage, splitSentences, SUPPORT_MIN } from "./text";
+import { splitSentences, SUPPORT_MIN } from "./text";
+import { meaningCoverage } from "./normalize";
 import { deltaBetween, readingFor, type Reading } from "./voice/delta";
 import { VOICE_THRESHOLDS } from "./voice/lexicon";
 
@@ -14,7 +15,7 @@ export { VOICE_THRESHOLDS } from "./voice/lexicon";
 export { HANDBOOK, HANDBUCH, SAMPLES } from "./samples";
 export type { Sample } from "./samples";
 
-export const ENGINE = { name: "answer-checker", version: "0.1.0" } as const;
+export const ENGINE = { name: "answer-checker", version: "0.2.0" } as const;
 
 export type Language = "en" | "de";
 export type SourceInput = string | { id?: string; text: string; title?: string };
@@ -73,7 +74,7 @@ export function claimsFor(answer: string, sources: readonly NormalizedSource[]):
     let best = -1;
     let bestScore = 0;
     sources.forEach((source, index) => {
-      const score = coverage(sentence, source.text);
+      const score = meaningCoverage(sentence, source.text);
       if (score > bestScore) {
         best = index;
         bestScore = score;

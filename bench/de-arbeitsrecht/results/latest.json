@@ -1,53 +1,138 @@
 {
   "engine": {
     "name": "answer-checker",
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "summary": {
-    "cases": 70,
-    "drifted": {
-      "caught": 29,
-      "caughtByIntended": 24,
-      "total": 70
-    },
-    "faithful": {
-      "passed": 62,
-      "total": 70
-    },
-    "paraphrase": {
-      "passed": 2,
-      "total": 70
-    },
-    "failPrecision": 0.2761904761904762,
-    "byDrift": {
-      "support": {
-        "caught": 14,
-        "total": 22
+    "all": {
+      "cases": 70,
+      "drifted": {
+        "caught": 65,
+        "caughtByIntended": 50,
+        "total": 70
       },
-      "scope": {
-        "caught": 0,
-        "total": 0
+      "faithful": {
+        "passed": 64,
+        "total": 70
       },
-      "qualifier": {
-        "caught": 7,
-        "total": 32
+      "paraphrase": {
+        "passed": 39,
+        "total": 70
       },
-      "omission": {
-        "caught": 8,
-        "total": 16
+      "failPrecision": 0.6372549019607843,
+      "byDrift": {
+        "support": {
+          "caught": 19,
+          "total": 22
+        },
+        "scope": {
+          "caught": 0,
+          "total": 0
+        },
+        "qualifier": {
+          "caught": 30,
+          "total": 32
+        },
+        "omission": {
+          "caught": 16,
+          "total": 16
+        }
+      },
+      "falseAlarms": {
+        "support": 22,
+        "scope": 0,
+        "qualifier": 14,
+        "omission": 6
       }
     },
-    "falseAlarms": {
-      "support": 73,
-      "scope": 0,
-      "qualifier": 6,
-      "omission": 7
+    "dev": {
+      "cases": 44,
+      "drifted": {
+        "caught": 42,
+        "caughtByIntended": 34,
+        "total": 44
+      },
+      "faithful": {
+        "passed": 44,
+        "total": 44
+      },
+      "paraphrase": {
+        "passed": 28,
+        "total": 44
+      },
+      "failPrecision": 0.7241379310344828,
+      "byDrift": {
+        "support": {
+          "caught": 10,
+          "total": 11
+        },
+        "scope": {
+          "caught": 0,
+          "total": 0
+        },
+        "qualifier": {
+          "caught": 22,
+          "total": 23
+        },
+        "omission": {
+          "caught": 10,
+          "total": 10
+        }
+      },
+      "falseAlarms": {
+        "support": 13,
+        "scope": 0,
+        "qualifier": 4,
+        "omission": 1
+      }
+    },
+    "holdout": {
+      "cases": 26,
+      "drifted": {
+        "caught": 23,
+        "caughtByIntended": 16,
+        "total": 26
+      },
+      "faithful": {
+        "passed": 20,
+        "total": 26
+      },
+      "paraphrase": {
+        "passed": 11,
+        "total": 26
+      },
+      "failPrecision": 0.5227272727272727,
+      "byDrift": {
+        "support": {
+          "caught": 9,
+          "total": 11
+        },
+        "scope": {
+          "caught": 0,
+          "total": 0
+        },
+        "qualifier": {
+          "caught": 8,
+          "total": 9
+        },
+        "omission": {
+          "caught": 6,
+          "total": 6
+        }
+      },
+      "falseAlarms": {
+        "support": 9,
+        "scope": 0,
+        "qualifier": 10,
+        "omission": 5
+      }
     }
   },
   "rows": [
     {
       "id": "arbzg-01",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -56,24 +141,27 @@
     {
       "id": "arbzg-01",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "qualifier"
     },
     {
       "id": "arbzg-01",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
       "drift": "qualifier"
     },
     {
       "id": "arbzg-02",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -82,26 +170,28 @@
     {
       "id": "arbzg-02",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "omission"
     },
     {
       "id": "arbzg-02",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "drifted",
       "verdict": "fail",
       "failed": [
-        "qualifier"
+        "qualifier",
+        "omission"
       ],
       "drift": "omission"
     },
     {
       "id": "arbzg-03",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -110,10 +200,10 @@
     {
       "id": "arbzg-03",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "paraphrase",
       "verdict": "fail",
       "failed": [
-        "support",
         "qualifier"
       ],
       "drift": "qualifier"
@@ -121,6 +211,7 @@
     {
       "id": "arbzg-03",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "drifted",
       "verdict": "fail",
       "failed": [
@@ -131,27 +222,25 @@
     {
       "id": "arbzg-04",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "faithful",
-      "verdict": "fail",
-      "failed": [
-        "qualifier"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "qualifier"
     },
     {
       "id": "arbzg-04",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support",
-        "qualifier"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "qualifier"
     },
     {
       "id": "arbzg-04",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "drifted",
       "verdict": "fail",
       "failed": [
@@ -162,6 +251,7 @@
     {
       "id": "arbzg-05",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -170,21 +260,19 @@
     {
       "id": "arbzg-05",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support",
-        "qualifier"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "qualifier"
     },
     {
       "id": "arbzg-05",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "drifted",
       "verdict": "fail",
       "failed": [
-        "support",
         "qualifier"
       ],
       "drift": "qualifier"
@@ -192,6 +280,7 @@
     {
       "id": "arbzg-06",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -200,24 +289,27 @@
     {
       "id": "arbzg-06",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "qualifier"
     },
     {
       "id": "arbzg-06",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
       "drift": "qualifier"
     },
     {
       "id": "arbzg-07",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -226,6 +318,7 @@
     {
       "id": "arbzg-07",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "paraphrase",
       "verdict": "fail",
       "failed": [
@@ -236,14 +329,18 @@
     {
       "id": "arbzg-07",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
       "drift": "qualifier"
     },
     {
       "id": "arbzg-08",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -252,24 +349,28 @@
     {
       "id": "arbzg-08",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "omission"
     },
     {
       "id": "arbzg-08",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
+      "verdict": "fail",
+      "failed": [
+        "qualifier",
+        "omission"
+      ],
       "drift": "omission"
     },
     {
       "id": "arbzg-09",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -278,69 +379,78 @@
     {
       "id": "arbzg-09",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "qualifier"
     },
     {
       "id": "arbzg-09",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "arbzg-10",
-      "law": "ArbZG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "support"
-    },
-    {
-      "id": "arbzg-10",
-      "law": "ArbZG",
-      "kind": "paraphrase",
       "verdict": "fail",
       "failed": [
-        "support"
+        "qualifier"
       ],
+      "drift": "qualifier"
+    },
+    {
+      "id": "arbzg-10",
+      "law": "ArbZG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
       "drift": "support"
     },
     {
       "id": "arbzg-10",
       "law": "ArbZG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "support"
-    },
-    {
-      "id": "arbzg-11",
-      "law": "ArbZG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "arbzg-11",
-      "law": "ArbZG",
+      "split": "dev",
       "kind": "paraphrase",
       "verdict": "fail",
       "failed": [
         "support",
         "qualifier"
       ],
+      "drift": "support"
+    },
+    {
+      "id": "arbzg-10",
+      "law": "ArbZG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "support",
+        "qualifier"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "arbzg-11",
+      "law": "ArbZG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
       "drift": "qualifier"
     },
     {
       "id": "arbzg-11",
       "law": "ArbZG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "arbzg-11",
+      "law": "ArbZG",
+      "split": "dev",
       "kind": "drifted",
       "verdict": "fail",
       "failed": [
@@ -351,6 +461,7 @@
     {
       "id": "arbzg-12",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -359,43 +470,16 @@
     {
       "id": "arbzg-12",
       "law": "ArbZG",
+      "split": "dev",
       "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "qualifier"
     },
     {
       "id": "arbzg-12",
       "law": "ArbZG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "burlg-01",
-      "law": "BUrlG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "burlg-01",
-      "law": "BUrlG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support",
-        "qualifier"
-      ],
-      "drift": "qualifier"
-    },
-    {
-      "id": "burlg-01",
-      "law": "BUrlG",
+      "split": "dev",
       "kind": "drifted",
       "verdict": "fail",
       "failed": [
@@ -404,34 +488,67 @@
       "drift": "qualifier"
     },
     {
-      "id": "burlg-02",
+      "id": "burlg-01",
       "law": "BUrlG",
+      "split": "dev",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
       "drift": "qualifier"
     },
     {
-      "id": "burlg-02",
+      "id": "burlg-01",
       "law": "BUrlG",
+      "split": "dev",
       "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "qualifier"
     },
     {
-      "id": "burlg-02",
+      "id": "burlg-01",
       "law": "BUrlG",
+      "split": "dev",
       "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "qualifier"
+    },
+    {
+      "id": "burlg-02",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "faithful",
       "verdict": "pass",
       "failed": [],
       "drift": "qualifier"
     },
     {
+      "id": "burlg-02",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "burlg-02",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "qualifier"
+    },
+    {
       "id": "burlg-03",
       "law": "BUrlG",
+      "split": "dev",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -440,16 +557,16 @@
     {
       "id": "burlg-03",
       "law": "BUrlG",
+      "split": "dev",
       "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "support"
     },
     {
       "id": "burlg-03",
       "law": "BUrlG",
+      "split": "dev",
       "kind": "drifted",
       "verdict": "fail",
       "failed": [
@@ -460,27 +577,25 @@
     {
       "id": "burlg-04",
       "law": "BUrlG",
+      "split": "dev",
       "kind": "faithful",
-      "verdict": "fail",
-      "failed": [
-        "omission"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "omission"
     },
     {
       "id": "burlg-04",
       "law": "BUrlG",
+      "split": "dev",
       "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support",
-        "omission"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "omission"
     },
     {
       "id": "burlg-04",
       "law": "BUrlG",
+      "split": "dev",
       "kind": "drifted",
       "verdict": "fail",
       "failed": [
@@ -491,6 +606,7 @@
     {
       "id": "burlg-05",
       "law": "BUrlG",
+      "split": "dev",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -499,619 +615,688 @@
     {
       "id": "burlg-05",
       "law": "BUrlG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "omission"
+    },
+    {
+      "id": "burlg-05",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "omission"
+      ],
+      "drift": "omission"
+    },
+    {
+      "id": "burlg-06",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "omission"
+    },
+    {
+      "id": "burlg-06",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "omission"
+    },
+    {
+      "id": "burlg-06",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "omission"
+    },
+    {
+      "id": "burlg-07",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "omission"
+    },
+    {
+      "id": "burlg-07",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "omission"
+    },
+    {
+      "id": "burlg-07",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "omission"
+      ],
+      "drift": "omission"
+    },
+    {
+      "id": "burlg-08",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "burlg-08",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "qualifier"
+    },
+    {
+      "id": "burlg-08",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "qualifier"
+    },
+    {
+      "id": "burlg-09",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "burlg-09",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "burlg-09",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "burlg-10",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "burlg-10",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "burlg-10",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "omission"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "burlg-11",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "burlg-11",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ],
+      "drift": "qualifier"
+    },
+    {
+      "id": "burlg-11",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "qualifier"
+    },
+    {
+      "id": "burlg-12",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "burlg-12",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ],
+      "drift": "qualifier"
+    },
+    {
+      "id": "burlg-12",
+      "law": "BUrlG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "entgfg-01",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "omission"
+    },
+    {
+      "id": "entgfg-01",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "fail",
+      "failed": [
+        "omission"
+      ],
+      "drift": "omission"
+    },
+    {
+      "id": "entgfg-01",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "omission"
+      ],
+      "drift": "omission"
+    },
+    {
+      "id": "entgfg-02",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "entgfg-02",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "entgfg-02",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "qualifier"
+    },
+    {
+      "id": "entgfg-03",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "entgfg-03",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "entgfg-03",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "entgfg-04",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "entgfg-04",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ],
+      "drift": "qualifier"
+    },
+    {
+      "id": "entgfg-04",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "qualifier"
+    },
+    {
+      "id": "entgfg-05",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "entgfg-05",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ],
+      "drift": "qualifier"
+    },
+    {
+      "id": "entgfg-05",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "qualifier"
+    },
+    {
+      "id": "entgfg-06",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "entgfg-06",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "entgfg-06",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "entgfg-07",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "omission"
+    },
+    {
+      "id": "entgfg-07",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "omission"
+    },
+    {
+      "id": "entgfg-07",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "omission"
+    },
+    {
+      "id": "entgfg-08",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "entgfg-08",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "entgfg-08",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "entgfg-09",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "entgfg-09",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "entgfg-09",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "entgfg-10",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "entgfg-10",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "entgfg-10",
+      "law": "EntgFG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "kschg-01",
+      "law": "KSchG",
+      "split": "holdout",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "kschg-01",
+      "law": "KSchG",
+      "split": "holdout",
+      "kind": "paraphrase",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "kschg-01",
+      "law": "KSchG",
+      "split": "holdout",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "qualifier"
+    },
+    {
+      "id": "kschg-02",
+      "law": "KSchG",
+      "split": "holdout",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "kschg-02",
+      "law": "KSchG",
+      "split": "holdout",
       "kind": "paraphrase",
       "verdict": "fail",
       "failed": [
         "support",
+        "qualifier"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "kschg-02",
+      "law": "KSchG",
+      "split": "holdout",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "kschg-03",
+      "law": "KSchG",
+      "split": "holdout",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "kschg-03",
+      "law": "KSchG",
+      "split": "holdout",
+      "kind": "paraphrase",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "kschg-03",
+      "law": "KSchG",
+      "split": "holdout",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "qualifier"
+    },
+    {
+      "id": "kschg-04",
+      "law": "KSchG",
+      "split": "holdout",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "kschg-04",
+      "law": "KSchG",
+      "split": "holdout",
+      "kind": "paraphrase",
+      "verdict": "fail",
+      "failed": [
         "omission"
       ],
-      "drift": "omission"
+      "drift": "support"
     },
     {
-      "id": "burlg-05",
-      "law": "BUrlG",
+      "id": "kschg-04",
+      "law": "KSchG",
+      "split": "holdout",
       "kind": "drifted",
       "verdict": "fail",
       "failed": [
         "omission"
       ],
-      "drift": "omission"
-    },
-    {
-      "id": "burlg-06",
-      "law": "BUrlG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "omission"
-    },
-    {
-      "id": "burlg-06",
-      "law": "BUrlG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "omission"
-    },
-    {
-      "id": "burlg-06",
-      "law": "BUrlG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "omission"
-    },
-    {
-      "id": "burlg-07",
-      "law": "BUrlG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "omission"
-    },
-    {
-      "id": "burlg-07",
-      "law": "BUrlG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "omission"
-    },
-    {
-      "id": "burlg-07",
-      "law": "BUrlG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "omission"
-    },
-    {
-      "id": "burlg-08",
-      "law": "BUrlG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "burlg-08",
-      "law": "BUrlG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "qualifier"
-    },
-    {
-      "id": "burlg-08",
-      "law": "BUrlG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "burlg-09",
-      "law": "BUrlG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "support"
-    },
-    {
-      "id": "burlg-09",
-      "law": "BUrlG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "burlg-09",
-      "law": "BUrlG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "support"
-    },
-    {
-      "id": "burlg-10",
-      "law": "BUrlG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "support"
-    },
-    {
-      "id": "burlg-10",
-      "law": "BUrlG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "burlg-10",
-      "law": "BUrlG",
-      "kind": "drifted",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "burlg-11",
-      "law": "BUrlG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "burlg-11",
-      "law": "BUrlG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "qualifier"
-    },
-    {
-      "id": "burlg-11",
-      "law": "BUrlG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "burlg-12",
-      "law": "BUrlG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "burlg-12",
-      "law": "BUrlG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "qualifier"
-    },
-    {
-      "id": "burlg-12",
-      "law": "BUrlG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "entgfg-01",
-      "law": "EntgFG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "omission"
-    },
-    {
-      "id": "entgfg-01",
-      "law": "EntgFG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "omission"
-    },
-    {
-      "id": "entgfg-01",
-      "law": "EntgFG",
-      "kind": "drifted",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "omission"
-    },
-    {
-      "id": "entgfg-02",
-      "law": "EntgFG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "entgfg-02",
-      "law": "EntgFG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "qualifier"
-    },
-    {
-      "id": "entgfg-02",
-      "law": "EntgFG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "entgfg-03",
-      "law": "EntgFG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "support"
-    },
-    {
-      "id": "entgfg-03",
-      "law": "EntgFG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "entgfg-03",
-      "law": "EntgFG",
-      "kind": "drifted",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "entgfg-04",
-      "law": "EntgFG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "entgfg-04",
-      "law": "EntgFG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "qualifier"
-    },
-    {
-      "id": "entgfg-04",
-      "law": "EntgFG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "entgfg-05",
-      "law": "EntgFG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "entgfg-05",
-      "law": "EntgFG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "qualifier"
-    },
-    {
-      "id": "entgfg-05",
-      "law": "EntgFG",
-      "kind": "drifted",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "qualifier"
-    },
-    {
-      "id": "entgfg-06",
-      "law": "EntgFG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "support"
-    },
-    {
-      "id": "entgfg-06",
-      "law": "EntgFG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "entgfg-06",
-      "law": "EntgFG",
-      "kind": "drifted",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "entgfg-07",
-      "law": "EntgFG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "omission"
-    },
-    {
-      "id": "entgfg-07",
-      "law": "EntgFG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "omission"
-    },
-    {
-      "id": "entgfg-07",
-      "law": "EntgFG",
-      "kind": "drifted",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "omission"
-    },
-    {
-      "id": "entgfg-08",
-      "law": "EntgFG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "support"
-    },
-    {
-      "id": "entgfg-08",
-      "law": "EntgFG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "entgfg-08",
-      "law": "EntgFG",
-      "kind": "drifted",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "entgfg-09",
-      "law": "EntgFG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "support"
-    },
-    {
-      "id": "entgfg-09",
-      "law": "EntgFG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "entgfg-09",
-      "law": "EntgFG",
-      "kind": "drifted",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "entgfg-10",
-      "law": "EntgFG",
-      "kind": "faithful",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "entgfg-10",
-      "law": "EntgFG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "entgfg-10",
-      "law": "EntgFG",
-      "kind": "drifted",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "kschg-01",
-      "law": "KSchG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "kschg-01",
-      "law": "KSchG",
-      "kind": "paraphrase",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "kschg-01",
-      "law": "KSchG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "kschg-02",
-      "law": "KSchG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "support"
-    },
-    {
-      "id": "kschg-02",
-      "law": "KSchG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "kschg-02",
-      "law": "KSchG",
-      "kind": "drifted",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "kschg-03",
-      "law": "KSchG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "kschg-03",
-      "law": "KSchG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "qualifier"
-    },
-    {
-      "id": "kschg-03",
-      "law": "KSchG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "kschg-04",
-      "law": "KSchG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "support"
-    },
-    {
-      "id": "kschg-04",
-      "law": "KSchG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "kschg-04",
-      "law": "KSchG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
       "drift": "support"
     },
     {
       "id": "kschg-05",
       "law": "KSchG",
+      "split": "holdout",
       "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "omission"
-    },
-    {
-      "id": "kschg-05",
-      "law": "KSchG",
-      "kind": "paraphrase",
       "verdict": "fail",
       "failed": [
-        "support"
+        "qualifier"
       ],
       "drift": "omission"
     },
     {
       "id": "kschg-05",
       "law": "KSchG",
+      "split": "holdout",
+      "kind": "paraphrase",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "omission"
+    },
+    {
+      "id": "kschg-05",
+      "law": "KSchG",
+      "split": "holdout",
       "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
       "drift": "omission"
     },
     {
       "id": "kschg-06",
       "law": "KSchG",
+      "split": "holdout",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -1120,6 +1305,7 @@
     {
       "id": "kschg-06",
       "law": "KSchG",
+      "split": "holdout",
       "kind": "paraphrase",
       "verdict": "fail",
       "failed": [
@@ -1130,14 +1316,18 @@
     {
       "id": "kschg-06",
       "law": "KSchG",
+      "split": "holdout",
       "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
       "drift": "qualifier"
     },
     {
       "id": "kschg-07",
       "law": "KSchG",
+      "split": "holdout",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -1146,24 +1336,29 @@
     {
       "id": "kschg-07",
       "law": "KSchG",
+      "split": "holdout",
       "kind": "paraphrase",
       "verdict": "fail",
       "failed": [
-        "support"
+        "qualifier"
       ],
       "drift": "qualifier"
     },
     {
       "id": "kschg-07",
       "law": "KSchG",
+      "split": "holdout",
       "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
       "drift": "qualifier"
     },
     {
       "id": "kschg-08",
       "law": "KSchG",
+      "split": "holdout",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -1172,25 +1367,39 @@
     {
       "id": "kschg-08",
       "law": "KSchG",
+      "split": "holdout",
       "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "qualifier"
     },
     {
       "id": "kschg-08",
       "law": "KSchG",
+      "split": "holdout",
       "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
       "drift": "qualifier"
     },
     {
       "id": "kschg-09",
       "law": "KSchG",
+      "split": "holdout",
       "kind": "faithful",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ],
+      "drift": "omission"
+    },
+    {
+      "id": "kschg-09",
+      "law": "KSchG",
+      "split": "holdout",
+      "kind": "paraphrase",
       "verdict": "fail",
       "failed": [
         "omission"
@@ -1200,17 +1409,7 @@
     {
       "id": "kschg-09",
       "law": "KSchG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support",
-        "omission"
-      ],
-      "drift": "omission"
-    },
-    {
-      "id": "kschg-09",
-      "law": "KSchG",
+      "split": "holdout",
       "kind": "drifted",
       "verdict": "fail",
       "failed": [
@@ -1222,6 +1421,7 @@
     {
       "id": "kschg-10",
       "law": "KSchG",
+      "split": "holdout",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -1230,24 +1430,29 @@
     {
       "id": "kschg-10",
       "law": "KSchG",
+      "split": "holdout",
       "kind": "paraphrase",
       "verdict": "fail",
       "failed": [
-        "support"
+        "qualifier"
       ],
       "drift": "support"
     },
     {
       "id": "kschg-10",
       "law": "KSchG",
+      "split": "holdout",
       "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
       "drift": "support"
     },
     {
       "id": "muschg-01",
       "law": "MuSchG",
+      "split": "holdout",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -1256,6 +1461,7 @@
     {
       "id": "muschg-01",
       "law": "MuSchG",
+      "split": "holdout",
       "kind": "paraphrase",
       "verdict": "fail",
       "failed": [
@@ -1266,14 +1472,18 @@
     {
       "id": "muschg-01",
       "law": "MuSchG",
+      "split": "holdout",
       "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
+      "verdict": "fail",
+      "failed": [
+        "omission"
+      ],
       "drift": "omission"
     },
     {
       "id": "muschg-02",
       "law": "MuSchG",
+      "split": "holdout",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -1282,26 +1492,28 @@
     {
       "id": "muschg-02",
       "law": "MuSchG",
+      "split": "holdout",
       "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "support"
     },
     {
       "id": "muschg-02",
       "law": "MuSchG",
+      "split": "holdout",
       "kind": "drifted",
       "verdict": "fail",
       "failed": [
-        "support"
+        "support",
+        "qualifier"
       ],
       "drift": "support"
     },
     {
       "id": "muschg-03",
       "law": "MuSchG",
+      "split": "holdout",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -1310,35 +1522,28 @@
     {
       "id": "muschg-03",
       "law": "MuSchG",
+      "split": "holdout",
       "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "qualifier"
     },
     {
       "id": "muschg-03",
       "law": "MuSchG",
+      "split": "holdout",
       "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "muschg-04",
-      "law": "MuSchG",
-      "kind": "faithful",
       "verdict": "fail",
       "failed": [
-        "support"
+        "qualifier"
       ],
       "drift": "qualifier"
     },
     {
       "id": "muschg-04",
       "law": "MuSchG",
-      "kind": "paraphrase",
+      "split": "holdout",
+      "kind": "faithful",
       "verdict": "fail",
       "failed": [
         "support"
@@ -1348,226 +1553,260 @@
     {
       "id": "muschg-04",
       "law": "MuSchG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "muschg-05",
-      "law": "MuSchG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "omission"
-    },
-    {
-      "id": "muschg-05",
-      "law": "MuSchG",
-      "kind": "paraphrase",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "omission"
-    },
-    {
-      "id": "muschg-05",
-      "law": "MuSchG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "omission"
-    },
-    {
-      "id": "muschg-06",
-      "law": "MuSchG",
-      "kind": "faithful",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "muschg-06",
-      "law": "MuSchG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "muschg-06",
-      "law": "MuSchG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "support"
-    },
-    {
-      "id": "muschg-07",
-      "law": "MuSchG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "support"
-    },
-    {
-      "id": "muschg-07",
-      "law": "MuSchG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "muschg-07",
-      "law": "MuSchG",
-      "kind": "drifted",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "muschg-08",
-      "law": "MuSchG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "muschg-08",
-      "law": "MuSchG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "qualifier"
-    },
-    {
-      "id": "muschg-08",
-      "law": "MuSchG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "muschg-09",
-      "law": "MuSchG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "support"
-    },
-    {
-      "id": "muschg-09",
-      "law": "MuSchG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "muschg-09",
-      "law": "MuSchG",
-      "kind": "drifted",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "muschg-10",
-      "law": "MuSchG",
-      "kind": "faithful",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "muschg-10",
-      "law": "MuSchG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "muschg-10",
-      "law": "MuSchG",
-      "kind": "drifted",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "nachwg-01",
-      "law": "NachwG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "nachwg-01",
-      "law": "NachwG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "qualifier"
-    },
-    {
-      "id": "nachwg-01",
-      "law": "NachwG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "nachwg-02",
-      "law": "NachwG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "omission"
-    },
-    {
-      "id": "nachwg-02",
-      "law": "NachwG",
+      "split": "holdout",
       "kind": "paraphrase",
       "verdict": "fail",
       "failed": [
         "support",
-        "omission"
+        "qualifier"
       ],
+      "drift": "qualifier"
+    },
+    {
+      "id": "muschg-04",
+      "law": "MuSchG",
+      "split": "holdout",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "qualifier"
+    },
+    {
+      "id": "muschg-05",
+      "law": "MuSchG",
+      "split": "holdout",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "omission"
+    },
+    {
+      "id": "muschg-05",
+      "law": "MuSchG",
+      "split": "holdout",
+      "kind": "paraphrase",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "omission"
+    },
+    {
+      "id": "muschg-05",
+      "law": "MuSchG",
+      "split": "holdout",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "support",
+        "qualifier"
+      ],
+      "drift": "omission"
+    },
+    {
+      "id": "muschg-06",
+      "law": "MuSchG",
+      "split": "holdout",
+      "kind": "faithful",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "muschg-06",
+      "law": "MuSchG",
+      "split": "holdout",
+      "kind": "paraphrase",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "muschg-06",
+      "law": "MuSchG",
+      "split": "holdout",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "muschg-07",
+      "law": "MuSchG",
+      "split": "holdout",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "muschg-07",
+      "law": "MuSchG",
+      "split": "holdout",
+      "kind": "paraphrase",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "muschg-07",
+      "law": "MuSchG",
+      "split": "holdout",
+      "kind": "drifted",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "muschg-08",
+      "law": "MuSchG",
+      "split": "holdout",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "muschg-08",
+      "law": "MuSchG",
+      "split": "holdout",
+      "kind": "paraphrase",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "qualifier"
+    },
+    {
+      "id": "muschg-08",
+      "law": "MuSchG",
+      "split": "holdout",
+      "kind": "drifted",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "muschg-09",
+      "law": "MuSchG",
+      "split": "holdout",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "muschg-09",
+      "law": "MuSchG",
+      "split": "holdout",
+      "kind": "paraphrase",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "muschg-09",
+      "law": "MuSchG",
+      "split": "holdout",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "muschg-10",
+      "law": "MuSchG",
+      "split": "holdout",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "muschg-10",
+      "law": "MuSchG",
+      "split": "holdout",
+      "kind": "paraphrase",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "muschg-10",
+      "law": "MuSchG",
+      "split": "holdout",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "nachwg-01",
+      "law": "NachwG",
+      "split": "holdout",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "nachwg-01",
+      "law": "NachwG",
+      "split": "holdout",
+      "kind": "paraphrase",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "nachwg-01",
+      "law": "NachwG",
+      "split": "holdout",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "qualifier"
+    },
+    {
+      "id": "nachwg-02",
+      "law": "NachwG",
+      "split": "holdout",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
       "drift": "omission"
     },
     {
       "id": "nachwg-02",
       "law": "NachwG",
+      "split": "holdout",
+      "kind": "paraphrase",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "omission"
+    },
+    {
+      "id": "nachwg-02",
+      "law": "NachwG",
+      "split": "holdout",
       "kind": "drifted",
       "verdict": "fail",
       "failed": [
+        "qualifier",
         "omission"
       ],
       "drift": "omission"
@@ -1575,6 +1814,7 @@
     {
       "id": "nachwg-03",
       "law": "NachwG",
+      "split": "holdout",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -1583,33 +1823,17 @@
     {
       "id": "nachwg-03",
       "law": "NachwG",
+      "split": "holdout",
       "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "support"
     },
     {
       "id": "nachwg-03",
       "law": "NachwG",
+      "split": "holdout",
       "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "support"
-    },
-    {
-      "id": "nachwg-04",
-      "law": "NachwG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "support"
-    },
-    {
-      "id": "nachwg-04",
-      "law": "NachwG",
-      "kind": "paraphrase",
       "verdict": "fail",
       "failed": [
         "support"
@@ -1619,6 +1843,27 @@
     {
       "id": "nachwg-04",
       "law": "NachwG",
+      "split": "holdout",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "support"
+    },
+    {
+      "id": "nachwg-04",
+      "law": "NachwG",
+      "split": "holdout",
+      "kind": "paraphrase",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "nachwg-04",
+      "law": "NachwG",
+      "split": "holdout",
       "kind": "drifted",
       "verdict": "pass",
       "failed": [],
@@ -1627,62 +1872,76 @@
     {
       "id": "nachwg-05",
       "law": "NachwG",
+      "split": "holdout",
       "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "omission"
-    },
-    {
-      "id": "nachwg-05",
-      "law": "NachwG",
-      "kind": "paraphrase",
       "verdict": "fail",
       "failed": [
-        "support"
+        "qualifier"
       ],
       "drift": "omission"
     },
     {
       "id": "nachwg-05",
       "law": "NachwG",
+      "split": "holdout",
+      "kind": "paraphrase",
+      "verdict": "fail",
+      "failed": [
+        "qualifier",
+        "omission"
+      ],
+      "drift": "omission"
+    },
+    {
+      "id": "nachwg-05",
+      "law": "NachwG",
+      "split": "holdout",
       "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
+      "verdict": "fail",
+      "failed": [
+        "qualifier",
+        "omission"
+      ],
       "drift": "omission"
     },
     {
       "id": "nachwg-06",
       "law": "NachwG",
+      "split": "holdout",
       "kind": "faithful",
       "verdict": "fail",
       "failed": [
-        "support"
+        "omission"
       ],
       "drift": "support"
     },
     {
       "id": "nachwg-06",
       "law": "NachwG",
+      "split": "holdout",
       "kind": "paraphrase",
       "verdict": "fail",
       "failed": [
-        "support"
+        "omission"
       ],
       "drift": "support"
     },
     {
       "id": "nachwg-06",
       "law": "NachwG",
+      "split": "holdout",
       "kind": "drifted",
       "verdict": "fail",
       "failed": [
-        "support"
+        "qualifier",
+        "omission"
       ],
       "drift": "support"
     },
     {
       "id": "tzbfg-01",
       "law": "TzBfG",
+      "split": "dev",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -1691,24 +1950,27 @@
     {
       "id": "tzbfg-01",
       "law": "TzBfG",
+      "split": "dev",
       "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "qualifier"
     },
     {
       "id": "tzbfg-01",
       "law": "TzBfG",
+      "split": "dev",
       "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
       "drift": "qualifier"
     },
     {
       "id": "tzbfg-02",
       "law": "TzBfG",
+      "split": "dev",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -1717,123 +1979,139 @@
     {
       "id": "tzbfg-02",
       "law": "TzBfG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "tzbfg-02",
-      "law": "TzBfG",
-      "kind": "drifted",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "support"
-    },
-    {
-      "id": "tzbfg-03",
-      "law": "TzBfG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "tzbfg-03",
-      "law": "TzBfG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "qualifier"
-    },
-    {
-      "id": "tzbfg-03",
-      "law": "TzBfG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "tzbfg-04",
-      "law": "TzBfG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "omission"
-    },
-    {
-      "id": "tzbfg-04",
-      "law": "TzBfG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "omission"
-    },
-    {
-      "id": "tzbfg-04",
-      "law": "TzBfG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "omission"
-    },
-    {
-      "id": "tzbfg-05",
-      "law": "TzBfG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "tzbfg-05",
-      "law": "TzBfG",
-      "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
-      "drift": "qualifier"
-    },
-    {
-      "id": "tzbfg-05",
-      "law": "TzBfG",
-      "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "qualifier"
-    },
-    {
-      "id": "tzbfg-06",
-      "law": "TzBfG",
-      "kind": "faithful",
-      "verdict": "pass",
-      "failed": [],
-      "drift": "omission"
-    },
-    {
-      "id": "tzbfg-06",
-      "law": "TzBfG",
+      "split": "dev",
       "kind": "paraphrase",
       "verdict": "fail",
       "failed": [
         "support",
+        "qualifier"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "tzbfg-02",
+      "law": "TzBfG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "support"
+    },
+    {
+      "id": "tzbfg-03",
+      "law": "TzBfG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "tzbfg-03",
+      "law": "TzBfG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "tzbfg-03",
+      "law": "TzBfG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "qualifier"
+    },
+    {
+      "id": "tzbfg-04",
+      "law": "TzBfG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "omission"
+    },
+    {
+      "id": "tzbfg-04",
+      "law": "TzBfG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ],
+      "drift": "omission"
+    },
+    {
+      "id": "tzbfg-04",
+      "law": "TzBfG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
         "omission"
+      ],
+      "drift": "omission"
+    },
+    {
+      "id": "tzbfg-05",
+      "law": "TzBfG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "tzbfg-05",
+      "law": "TzBfG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "qualifier"
+    },
+    {
+      "id": "tzbfg-05",
+      "law": "TzBfG",
+      "split": "dev",
+      "kind": "drifted",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
+      "drift": "qualifier"
+    },
+    {
+      "id": "tzbfg-06",
+      "law": "TzBfG",
+      "split": "dev",
+      "kind": "faithful",
+      "verdict": "pass",
+      "failed": [],
+      "drift": "omission"
+    },
+    {
+      "id": "tzbfg-06",
+      "law": "TzBfG",
+      "split": "dev",
+      "kind": "paraphrase",
+      "verdict": "fail",
+      "failed": [
+        "support"
       ],
       "drift": "omission"
     },
     {
       "id": "tzbfg-06",
       "law": "TzBfG",
+      "split": "dev",
       "kind": "drifted",
       "verdict": "fail",
       "failed": [
@@ -1844,6 +2122,7 @@
     {
       "id": "tzbfg-07",
       "law": "TzBfG",
+      "split": "dev",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -1852,24 +2131,27 @@
     {
       "id": "tzbfg-07",
       "law": "TzBfG",
+      "split": "dev",
       "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "qualifier"
     },
     {
       "id": "tzbfg-07",
       "law": "TzBfG",
+      "split": "dev",
       "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
       "drift": "qualifier"
     },
     {
       "id": "tzbfg-08",
       "law": "TzBfG",
+      "split": "dev",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -1878,26 +2160,27 @@
     {
       "id": "tzbfg-08",
       "law": "TzBfG",
+      "split": "dev",
       "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "qualifier"
     },
     {
       "id": "tzbfg-08",
       "law": "TzBfG",
+      "split": "dev",
       "kind": "drifted",
       "verdict": "fail",
       "failed": [
-        "support"
+        "qualifier"
       ],
       "drift": "qualifier"
     },
     {
       "id": "tzbfg-09",
       "law": "TzBfG",
+      "split": "dev",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -1906,6 +2189,7 @@
     {
       "id": "tzbfg-09",
       "law": "TzBfG",
+      "split": "dev",
       "kind": "paraphrase",
       "verdict": "fail",
       "failed": [
@@ -1916,14 +2200,18 @@
     {
       "id": "tzbfg-09",
       "law": "TzBfG",
+      "split": "dev",
       "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ],
       "drift": "support"
     },
     {
       "id": "tzbfg-10",
       "law": "TzBfG",
+      "split": "dev",
       "kind": "faithful",
       "verdict": "pass",
       "failed": [],
@@ -1932,19 +2220,21 @@
     {
       "id": "tzbfg-10",
       "law": "TzBfG",
+      "split": "dev",
       "kind": "paraphrase",
-      "verdict": "fail",
-      "failed": [
-        "support"
-      ],
+      "verdict": "pass",
+      "failed": [],
       "drift": "qualifier"
     },
     {
       "id": "tzbfg-10",
       "law": "TzBfG",
+      "split": "dev",
       "kind": "drifted",
-      "verdict": "pass",
-      "failed": [],
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ],
       "drift": "qualifier"
     }
   ]

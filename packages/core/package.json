@@ -1,6 +1,6 @@
 {
   "name": "@answer-checker/core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Check a document chatbot's answer against its sources, claim by claim. Offline, German and English.",
   "type": "module",
   "license": "MIT",

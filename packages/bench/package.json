@@ -1,6 +1,6 @@
 {
   "name": "@answer-checker/bench",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "license": "MIT",
   "type": "module",
@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@answer-checker/core": "0.1.0",
+    "@answer-checker/core": "0.2.0",
     "yaml": "^2.6.0"
   }
 }

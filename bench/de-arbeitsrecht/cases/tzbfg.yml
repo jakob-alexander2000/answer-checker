@@ -1,5 +1,6 @@
 law: TzBfG
 source: tzbfg.md
+split: dev
 cases:
   - id: tzbfg-01
     question: Kann ich verlangen, in Teilzeit zu arbeiten?

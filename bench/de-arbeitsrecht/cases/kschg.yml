@@ -1,5 +1,6 @@
 law: KSchG
 source: kschg.md
+split: holdout
 cases:
   - id: kschg-01
     question: Ab wann gilt für mich der Kündigungsschutz?

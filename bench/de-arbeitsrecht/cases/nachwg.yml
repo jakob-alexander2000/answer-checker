@@ -1,5 +1,6 @@
 law: NachwG
 source: nachwg.md
+split: holdout
 cases:
   - id: nachwg-01
     question: Bis wann muss ich meine Arbeitsbedingungen schriftlich bekommen?

@@ -1,0 +1,75 @@
+# Filled in from the bench answer key, not by a person. See README.md.
+findings:
+  f-001:
+    status: confirmed
+    note: "Eine Zahl, Frist oder Grenze weicht von der Quelle ab."
+  f-002:
+    status: dismissed
+    note: "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (umformuliert)."
+  f-003:
+    status: confirmed
+    note: "Eine Zahl, Frist oder Grenze weicht von der Quelle ab."
+  f-004:
+    status: confirmed
+    note: "Die Aussage steht so nicht in der Quelle."
+  f-005:
+    status: confirmed
+    note: "Die Aussage steht so nicht in der Quelle."
+  f-006:
+    status: confirmed
+    note: "Die Aussage steht so nicht in der Quelle."
+  f-007:
+    status: confirmed
+    note: "Die Aussage steht so nicht in der Quelle."
+  f-008:
+    status: confirmed
+    note: "Eine Zahl, Frist oder Grenze weicht von der Quelle ab."
+  f-009:
+    status: dismissed
+    note: "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (wörtlich)."
+  f-010:
+    status: dismissed
+    note: "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (wörtlich)."
+  f-011:
+    status: dismissed
+    note: "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (umformuliert)."
+  f-012:
+    status: confirmed
+    note: "Eine Zahl, Frist oder Grenze weicht von der Quelle ab."
+  f-013:
+    status: confirmed
+    note: "Eine Zahl, Frist oder Grenze weicht von der Quelle ab."
+  f-014:
+    status: dismissed
+    note: "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (umformuliert)."
+  f-015:
+    status: dismissed
+    note: "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (wörtlich)."
+  f-016:
+    status: dismissed
+    note: "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (wörtlich)."
+  f-017:
+    status: confirmed
+    note: "Die Aussage steht so nicht in der Quelle."
+  f-018:
+    status: confirmed
+    note: "Eine Bedingung oder Ausnahme der Quelle fehlt."
+  f-019:
+    status: confirmed
+    note: "Eine Bedingung oder Ausnahme der Quelle fehlt."
+  f-020:
+    status: confirmed
+    note: "Eine Zahl, Frist oder Grenze weicht von der Quelle ab."
+  f-021:
+    status: dismissed
+    note: "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (umformuliert)."
+  f-022:
+    status: dismissed
+    note: "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (umformuliert)."
+  f-023:
+    status: dismissed
+    note: "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (umformuliert)."
+  f-024:
+    status: dismissed
+    note: "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (umformuliert)."
+missed: []

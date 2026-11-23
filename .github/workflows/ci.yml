@@ -22,10 +22,11 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run build --workspace @answer-checker/web
-      - name: Bench results are current
+      - name: Bench results and sample audit are current
         run: |
           npm run bench --workspace @answer-checker/bench
-          git diff --exit-code bench/
+          npm run sample-audit --workspace @answer-checker/bench
+          git diff --exit-code bench/ examples/sample-audit/
 
   action:
     # Runs this repo's own GitHub Action on the six playground samples.

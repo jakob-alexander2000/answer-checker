@@ -1,0 +1,1764 @@
+{
+  "config": {
+    "title": "Arbeitsrecht-Fragen, Beispielbericht",
+    "client": "Beispiel (kein Kunde)",
+    "bot": "Demo-Log aus dem Testsatz de-arbeitsrecht",
+    "date": "2026-11-23",
+    "lang": "de",
+    "scope": "Dies ist ein Beispielbericht. Das geprüfte System ist kein echter Chatbot: Für jede der 70 Fragen des öffentlichen Testsatzes de-arbeitsrecht wurde mit festem Zufallswert eine der drei handgeschriebenen Antworten gewählt, richtig, umformuliert oder mit einem eingebauten Fehler. 44 der 70 Fragen wurden zum Abstimmen des Werkzeugs benutzt, die Trefferquote hier ist deshalb besser als bei einem fremden System. Die Quellen sind Gesetzestexte aus einem älteren öffentlichen Spiegel und dienen nur als Testdokumente.",
+    "reviewer": "Musterlösung des Testsatzes (im Beispiel statt einer Person)",
+    "benchmark": {
+      "name": "de-arbeitsrecht",
+      "url": "https://github.com/jakob-alexander2000/answer-checker/tree/main/bench/de-arbeitsrecht",
+      "questions": 26,
+      "caught": 23,
+      "drifted": 26,
+      "failPrecision": 0.5227272727272727
+    }
+  },
+  "engine": {
+    "name": "answer-checker",
+    "version": "0.2.0"
+  },
+  "entries": [
+    {
+      "id": "arbzg-01",
+      "question": "Wie lange darf ich pro Tag höchstens arbeiten?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "arbzg-02",
+      "question": "Darf ich auch zehn Stunden am Tag arbeiten?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "arbzg-03",
+      "question": "Wie lange muss meine Pause bei einem Acht-Stunden-Tag sein?",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "arbzg-04",
+      "question": "Wie viel Pause brauche ich, wenn ich zehn Stunden arbeite?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "arbzg-05",
+      "question": "Darf ich meine Pause aufteilen?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "arbzg-06",
+      "question": "Wie lange darf ich ohne Pause am Stück arbeiten?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "arbzg-07",
+      "question": "Wie lange muss die Ruhezeit zwischen zwei Arbeitstagen sein?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "arbzg-08",
+      "question": "Darf die Ruhezeit im Krankenhaus kürzer sein?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "arbzg-09",
+      "question": "Wie lange dürfen Nachtarbeitnehmer pro Tag arbeiten?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "arbzg-10",
+      "question": "Darf ich sonntags beschäftigt werden?",
+      "verdict": "fail",
+      "failed": [
+        "support",
+        "qualifier"
+      ]
+    },
+    {
+      "id": "arbzg-11",
+      "question": "Wie viele Sonntage im Jahr müssen frei bleiben?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "arbzg-12",
+      "question": "Bekomme ich einen Ersatzruhetag, wenn ich sonntags arbeite?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "burlg-01",
+      "question": "Wie viel Urlaub steht mir gesetzlich mindestens zu?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "burlg-02",
+      "question": "Ab wann habe ich Anspruch auf den vollen Urlaub?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "burlg-03",
+      "question": "Wer gilt als Arbeitnehmer im Sinne des Urlaubsgesetzes?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "burlg-04",
+      "question": "Muss mein Arbeitgeber meine Urlaubswünsche berücksichtigen?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "burlg-05",
+      "question": "Muss ich meinen Urlaub am Stück nehmen?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "burlg-06",
+      "question": "Wie lang muss ein Urlaubsteil mindestens sein, wenn der Urlaub geteilt wird?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "burlg-07",
+      "question": "Kann ich Resturlaub ins nächste Jahr mitnehmen?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "burlg-08",
+      "question": "Bis wann muss übertragener Urlaub genommen werden?",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "burlg-09",
+      "question": "Was passiert mit meinem Urlaub, wenn das Arbeitsverhältnis endet?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "burlg-10",
+      "question": "Bekomme ich Urlaub, wenn mein alter Arbeitgeber mir dieses Jahr schon Urlaub gegeben hat?",
+      "verdict": "fail",
+      "failed": [
+        "omission"
+      ]
+    },
+    {
+      "id": "burlg-11",
+      "question": "Wie werden halbe Urlaubstage gerundet?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "burlg-12",
+      "question": "Darf ich im Urlaub nebenbei arbeiten?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "entgfg-01",
+      "question": "Wie lange zahlt mein Arbeitgeber mein Gehalt weiter, wenn ich krank bin?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "entgfg-02",
+      "question": "Wie lange gibt es Entgeltfortzahlung im Krankheitsfall?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "entgfg-03",
+      "question": "Habe ich in den ersten Wochen eines neuen Jobs Anspruch auf Lohnfortzahlung bei Krankheit?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "entgfg-04",
+      "question": "Was gilt, wenn ich wegen derselben Krankheit wieder arbeitsunfähig werde?",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ]
+    },
+    {
+      "id": "entgfg-05",
+      "question": "Wann bekomme ich bei derselben Krankheit erneut sechs Wochen Lohnfortzahlung?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "entgfg-06",
+      "question": "Wann muss ich meinem Arbeitgeber meine Krankmeldung mitteilen?",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "entgfg-07",
+      "question": "Ab wann brauche ich eine ärztliche Bescheinigung?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "entgfg-08",
+      "question": "Darf mein Arbeitgeber das Attest früher verlangen?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "entgfg-09",
+      "question": "Wie hoch ist die Entgeltfortzahlung?",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ]
+    },
+    {
+      "id": "entgfg-10",
+      "question": "Zählen Überstunden bei der Lohnfortzahlung mit?",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ]
+    },
+    {
+      "id": "kschg-01",
+      "question": "Ab wann gilt für mich der Kündigungsschutz?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "kschg-02",
+      "question": "Gilt das Kündigungsschutzgesetz auch in sehr kleinen Betrieben?",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "kschg-03",
+      "question": "Wie lange habe ich Zeit, gegen eine Kündigung zu klagen?",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "kschg-04",
+      "question": "Ab wann läuft die Klagefrist, wenn eine Behörde der Kündigung zustimmen muss?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "kschg-05",
+      "question": "Bekomme ich bei einer betriebsbedingten Kündigung eine Abfindung?",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "kschg-06",
+      "question": "Wie hoch ist die Abfindung bei einer betriebsbedingten Kündigung?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "kschg-07",
+      "question": "Wie hoch kann eine Abfindung vom Gericht höchstens sein?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "kschg-08",
+      "question": "Bis wann muss ich bei einer Änderungskündigung den Vorbehalt erklären?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "kschg-09",
+      "question": "Kann einem Betriebsratsmitglied gekündigt werden?",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ]
+    },
+    {
+      "id": "kschg-10",
+      "question": "Gilt der Kündigungsschutz im öffentlichen Dienst?",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "muschg-01",
+      "question": "Ab wann darf ich vor der Geburt nicht mehr arbeiten?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "muschg-02",
+      "question": "Kann ich meine Bereitschaft, vor der Geburt zu arbeiten, zurücknehmen?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "muschg-03",
+      "question": "Wie lange gilt die Schutzfrist nach der Geburt?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "muschg-04",
+      "question": "Wann verlängert sich die Schutzfrist nach der Geburt?",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "muschg-05",
+      "question": "Darf ich als Schwangere abends arbeiten?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "muschg-06",
+      "question": "Darf ich als Schwangere sonntags arbeiten?",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ]
+    },
+    {
+      "id": "muschg-07",
+      "question": "Muss ich für Vorsorgeuntersuchungen Urlaub nehmen?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "muschg-08",
+      "question": "Wie viel Zeit zum Stillen steht mir bei der Arbeit zu?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "muschg-09",
+      "question": "Wann sollte ich meinem Arbeitgeber die Schwangerschaft mitteilen?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "muschg-10",
+      "question": "Darf mir während der Schwangerschaft gekündigt werden?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "nachwg-01",
+      "question": "Bis wann muss ich meine Arbeitsbedingungen schriftlich bekommen?",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "nachwg-02",
+      "question": "Gilt das Nachweisgesetz auch für Aushilfen?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "nachwg-03",
+      "question": "Kann ich den Nachweis per E-Mail bekommen?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "nachwg-04",
+      "question": "Wie schnell muss eine Änderung meiner Vertragsbedingungen mitgeteilt werden?",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "nachwg-05",
+      "question": "Brauche ich einen extra Nachweis, wenn ich schon einen schriftlichen Arbeitsvertrag habe?",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "nachwg-06",
+      "question": "Wann muss ich die Niederschrift bei einem Auslandseinsatz bekommen?",
+      "verdict": "fail",
+      "failed": [
+        "omission"
+      ]
+    },
+    {
+      "id": "tzbfg-01",
+      "question": "Kann ich verlangen, in Teilzeit zu arbeiten?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "tzbfg-02",
+      "question": "Gilt der Teilzeitanspruch auch in kleinen Firmen?",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ]
+    },
+    {
+      "id": "tzbfg-03",
+      "question": "Wie früh muss ich den Teilzeitwunsch anmelden?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "tzbfg-04",
+      "question": "Muss mein Arbeitgeber der Teilzeit zustimmen?",
+      "verdict": "fail",
+      "failed": [
+        "omission"
+      ]
+    },
+    {
+      "id": "tzbfg-05",
+      "question": "Bis wann muss mein Arbeitgeber über den Teilzeitantrag entscheiden?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "tzbfg-06",
+      "question": "Dürfen Teilzeitkräfte schlechter behandelt werden?",
+      "verdict": "fail",
+      "failed": [
+        "omission"
+      ]
+    },
+    {
+      "id": "tzbfg-07",
+      "question": "Wie lange darf ein Arbeitsvertrag ohne Grund befristet sein?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "tzbfg-08",
+      "question": "Wie oft darf ein befristeter Vertrag ohne Grund verlängert werden?",
+      "verdict": "pass",
+      "failed": []
+    },
+    {
+      "id": "tzbfg-09",
+      "question": "Darf mein früherer Arbeitgeber mich ohne Grund befristet einstellen?",
+      "verdict": "fail",
+      "failed": [
+        "support"
+      ]
+    },
+    {
+      "id": "tzbfg-10",
+      "question": "Wie lange habe ich Zeit, gegen eine unwirksame Befristung zu klagen?",
+      "verdict": "fail",
+      "failed": [
+        "qualifier"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "entryId": "arbzg-03",
+      "severity": "high",
+      "checks": [
+        "qualifier"
+      ],
+      "reversed": false,
+      "question": "Wie lange muss meine Pause bei einem Acht-Stunden-Tag sein?",
+      "answer": "Die Arbeit ist durch Ruhepausen von 15 Minuten zu unterbrechen.",
+      "answerSpans": [
+        {
+          "where": "answer",
+          "passageIndex": -1,
+          "start": 36,
+          "end": 46,
+          "text": "15 Minuten"
+        }
+      ],
+      "sources": [
+        "Die Arbeit ist durch im voraus feststehende Ruhepausen von mindestens 30 Minuten bei einer Arbeitszeit von mehr als sechs bis zu neun Stunden und 45 Minuten bei einer Arbeitszeit von mehr als neun Stunden insgesamt zu unterbrechen."
+      ],
+      "sourceSpans": [
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 59,
+          "end": 80,
+          "text": "mindestens 30 Minuten"
+        },
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 107,
+          "end": 121,
+          "text": "mehr als sechs"
+        },
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 122,
+          "end": 141,
+          "text": "bis zu neun Stunden"
+        },
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 146,
+          "end": 156,
+          "text": "45 Minuten"
+        },
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 183,
+          "end": 204,
+          "text": "mehr als neun Stunden"
+        }
+      ],
+      "details": [
+        {
+          "check": "qualifier",
+          "detail": "The answer drops “mindestens 30 Minuten” and “mehr als sechs” and “bis zu neun Stunden” and “45 Minuten” and “mehr als neun Stunden”.",
+          "spans": [
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 59,
+              "end": 80,
+              "text": "mindestens 30 Minuten"
+            },
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 107,
+              "end": 121,
+              "text": "mehr als sechs"
+            },
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 122,
+              "end": 141,
+              "text": "bis zu neun Stunden"
+            },
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 146,
+              "end": 156,
+              "text": "45 Minuten"
+            },
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 183,
+              "end": 204,
+              "text": "mehr als neun Stunden"
+            },
+            {
+              "where": "answer",
+              "passageIndex": -1,
+              "start": 36,
+              "end": 46,
+              "text": "15 Minuten"
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "confirmed",
+        "note": "Eine Zahl, Frist oder Grenze weicht von der Quelle ab."
+      },
+      "id": "f-001"
+    },
+    {
+      "entryId": "arbzg-10",
+      "severity": "high",
+      "checks": [
+        "support",
+        "qualifier"
+      ],
+      "reversed": false,
+      "question": "Darf ich sonntags beschäftigt werden?",
+      "answer": "Grundsätzlich nein, an Sonn- und Feiertagen ist Beschäftigung den ganzen Tag über verboten.",
+      "answerSpans": [
+        {
+          "where": "answer",
+          "passageIndex": -1,
+          "start": 0,
+          "end": 91,
+          "text": "Grundsätzlich nein, an Sonn- und Feiertagen ist Beschäftigung den ganzen Tag über verboten."
+        }
+      ],
+      "sources": [
+        "Arbeitnehmer dürfen an Sonn- und gesetzlichen Feiertagen von 0 bis 24 Uhr nicht beschäftigt werden."
+      ],
+      "sourceSpans": [
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 61,
+          "end": 62,
+          "text": "0"
+        },
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 67,
+          "end": 73,
+          "text": "24 Uhr"
+        }
+      ],
+      "details": [
+        {
+          "check": "support",
+          "detail": "A sentence is not in the retrieved passages.",
+          "spans": [
+            {
+              "where": "answer",
+              "passageIndex": -1,
+              "start": 0,
+              "end": 91,
+              "text": "Grundsätzlich nein, an Sonn- und Feiertagen ist Beschäftigung den ganzen Tag über verboten."
+            }
+          ]
+        },
+        {
+          "check": "qualifier",
+          "detail": "The answer drops “0” and “24 Uhr”.",
+          "spans": [
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 61,
+              "end": 62,
+              "text": "0"
+            },
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 67,
+              "end": 73,
+              "text": "24 Uhr"
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "dismissed",
+        "note": "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (umformuliert)."
+      },
+      "id": "f-002"
+    },
+    {
+      "entryId": "burlg-08",
+      "severity": "high",
+      "checks": [
+        "qualifier"
+      ],
+      "reversed": false,
+      "question": "Bis wann muss übertragener Urlaub genommen werden?",
+      "answer": "Im Fall der Übertragung muss der Urlaub im folgenden Kalenderjahr genommen werden.",
+      "answerSpans": [],
+      "sources": [
+        "Im Fall der Übertragung muß der Urlaub in den ersten drei Monaten des folgenden Kalenderjahrs gewährt und genommen werden."
+      ],
+      "sourceSpans": [
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 53,
+          "end": 65,
+          "text": "drei Monaten"
+        }
+      ],
+      "details": [
+        {
+          "check": "qualifier",
+          "detail": "The answer drops “drei Monaten”.",
+          "spans": [
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 53,
+              "end": 65,
+              "text": "drei Monaten"
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "confirmed",
+        "note": "Eine Zahl, Frist oder Grenze weicht von der Quelle ab."
+      },
+      "id": "f-003"
+    },
+    {
+      "entryId": "burlg-10",
+      "severity": "high",
+      "checks": [
+        "omission"
+      ],
+      "reversed": false,
+      "question": "Bekomme ich Urlaub, wenn mein alter Arbeitgeber mir dieses Jahr schon Urlaub gegeben hat?",
+      "answer": "Der Anspruch auf Urlaub besteht für jedes Arbeitsverhältnis neu, egal was ein früherer Arbeitgeber gewährt hat.",
+      "answerSpans": [],
+      "sources": [
+        "Der Anspruch auf Urlaub besteht nicht, soweit dem Arbeitnehmer für das laufende Kalenderjahr bereits von einem früheren Arbeitgeber Urlaub gewährt worden ist."
+      ],
+      "sourceSpans": [
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 39,
+          "end": 157,
+          "text": "soweit dem Arbeitnehmer für das laufende Kalenderjahr bereits von einem früheren Arbeitgeber Urlaub gewährt worden ist"
+        }
+      ],
+      "details": [
+        {
+          "check": "omission",
+          "detail": "The answer drops “soweit dem Arbeitnehmer für das laufende Kalenderjahr bereits von einem früheren Arbeitgeber Urlaub gewährt worden ist”.",
+          "spans": [
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 39,
+              "end": 157,
+              "text": "soweit dem Arbeitnehmer für das laufende Kalenderjahr bereits von einem früheren Arbeitgeber Urlaub gewährt worden ist"
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "confirmed",
+        "note": "Die Aussage steht so nicht in der Quelle."
+      },
+      "id": "f-004"
+    },
+    {
+      "entryId": "entgfg-06",
+      "severity": "high",
+      "checks": [
+        "qualifier"
+      ],
+      "reversed": false,
+      "question": "Wann muss ich meinem Arbeitgeber meine Krankmeldung mitteilen?",
+      "answer": "Sie sind verpflichtet, dem Arbeitgeber die Arbeitsunfähigkeit innerhalb einer Woche mitzuteilen.",
+      "answerSpans": [
+        {
+          "where": "answer",
+          "passageIndex": -1,
+          "start": 72,
+          "end": 83,
+          "text": "einer Woche"
+        }
+      ],
+      "sources": [
+        "Der Arbeitnehmer ist verpflichtet, dem Arbeitgeber die Arbeitsunfähigkeit und deren voraussichtliche Dauer unverzüglich mitzuteilen."
+      ],
+      "sourceSpans": [],
+      "details": [
+        {
+          "check": "qualifier",
+          "detail": "The answer gives “einer Woche”, which no passage says.",
+          "spans": [
+            {
+              "where": "answer",
+              "passageIndex": -1,
+              "start": 72,
+              "end": 83,
+              "text": "einer Woche"
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "confirmed",
+        "note": "Die Aussage steht so nicht in der Quelle."
+      },
+      "id": "f-005"
+    },
+    {
+      "entryId": "entgfg-10",
+      "severity": "high",
+      "checks": [
+        "support"
+      ],
+      "reversed": true,
+      "question": "Zählen Überstunden bei der Lohnfortzahlung mit?",
+      "answer": "Zum fortgezahlten Arbeitsentgelt gehört auch das zusätzlich für Überstunden gezahlte Arbeitsentgelt.",
+      "answerSpans": [
+        {
+          "where": "answer",
+          "passageIndex": -1,
+          "start": 0,
+          "end": 100,
+          "text": "Zum fortgezahlten Arbeitsentgelt gehört auch das zusätzlich für Überstunden gezahlte Arbeitsentgelt."
+        }
+      ],
+      "sources": [
+        "Zum Arbeitsentgelt nach Absatz 1 gehören nicht das zusätzlich für Überstunden gezahlte Arbeitsentgelt und Leistungen für Aufwendungen des Arbeitnehmers"
+      ],
+      "sourceSpans": [],
+      "details": [
+        {
+          "check": "support",
+          "detail": "A sentence says the opposite of the passage.",
+          "spans": [
+            {
+              "where": "answer",
+              "passageIndex": -1,
+              "start": 0,
+              "end": 100,
+              "text": "Zum fortgezahlten Arbeitsentgelt gehört auch das zusätzlich für Überstunden gezahlte Arbeitsentgelt."
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "confirmed",
+        "note": "Die Aussage steht so nicht in der Quelle."
+      },
+      "id": "f-006"
+    },
+    {
+      "entryId": "kschg-02",
+      "severity": "high",
+      "checks": [
+        "qualifier"
+      ],
+      "reversed": false,
+      "question": "Gilt das Kündigungsschutzgesetz auch in sehr kleinen Betrieben?",
+      "answer": "Die Vorschriften des Kündigungsschutzgesetzes gelten für alle Betriebe und Verwaltungen, unabhängig von der Zahl der Arbeitnehmer.",
+      "answerSpans": [],
+      "sources": [
+        "Die Vorschriften des Ersten Abschnitts gelten mit Ausnahme der §§ 4 bis 7 und des § 13 Abs. 1 Satz 1 und 2 nicht für Betriebe und Verwaltungen, in denen in der Regel fünf oder weniger Arbeitnehmer ausschließlich der zu ihrer Berufsbildung Beschäftigten beschäftigt werden."
+      ],
+      "sourceSpans": [
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 21,
+          "end": 38,
+          "text": "Ersten Abschnitts"
+        },
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 72,
+          "end": 73,
+          "text": "7"
+        }
+      ],
+      "details": [
+        {
+          "check": "qualifier",
+          "detail": "The answer drops “Ersten Abschnitts” and “7”.",
+          "spans": [
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 21,
+              "end": 38,
+              "text": "Ersten Abschnitts"
+            },
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 72,
+              "end": 73,
+              "text": "7"
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "confirmed",
+        "note": "Die Aussage steht so nicht in der Quelle."
+      },
+      "id": "f-007"
+    },
+    {
+      "entryId": "kschg-03",
+      "severity": "high",
+      "checks": [
+        "qualifier"
+      ],
+      "reversed": false,
+      "question": "Wie lange habe ich Zeit, gegen eine Kündigung zu klagen?",
+      "answer": "Sie müssen innerhalb von vier Wochen nach Zugang der schriftlichen Kündigung Klage beim Arbeitsgericht erheben.",
+      "answerSpans": [
+        {
+          "where": "answer",
+          "passageIndex": -1,
+          "start": 25,
+          "end": 36,
+          "text": "vier Wochen"
+        }
+      ],
+      "sources": [
+        "Will ein Arbeitnehmer geltend machen, dass eine Kündigung sozial ungerechtfertigt oder aus anderen Gründen rechtsunwirksam ist, so muss er innerhalb von drei Wochen nach Zugang der schriftlichen Kündigung Klage beim Arbeitsgericht auf Feststellung erheben, dass das Arbeitsverhältnis durch die Kündigung nicht aufgelöst ist."
+      ],
+      "sourceSpans": [
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 153,
+          "end": 164,
+          "text": "drei Wochen"
+        }
+      ],
+      "details": [
+        {
+          "check": "qualifier",
+          "detail": "The answer drops “drei Wochen”.",
+          "spans": [
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 153,
+              "end": 164,
+              "text": "drei Wochen"
+            },
+            {
+              "where": "answer",
+              "passageIndex": -1,
+              "start": 25,
+              "end": 36,
+              "text": "vier Wochen"
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "confirmed",
+        "note": "Eine Zahl, Frist oder Grenze weicht von der Quelle ab."
+      },
+      "id": "f-008"
+    },
+    {
+      "entryId": "kschg-05",
+      "severity": "high",
+      "checks": [
+        "qualifier"
+      ],
+      "reversed": false,
+      "question": "Bekomme ich bei einer betriebsbedingten Kündigung eine Abfindung?",
+      "answer": "Kündigt der Arbeitgeber wegen dringender betrieblicher Erfordernisse und erheben Sie bis zum Ablauf der Klagefrist keine Klage, haben Sie mit dem Ablauf der Kündigungsfrist Anspruch auf eine Abfindung.",
+      "answerSpans": [],
+      "sources": [
+        "Kündigt der Arbeitgeber wegen dringender betrieblicher Erfordernisse nach § 1 Abs. 2 Satz 1 und erhebt der Arbeitnehmer bis zum Ablauf der Frist des § 4 Satz 1 keine Klage auf Feststellung, dass das Arbeitsverhältnis durch die Kündigung nicht aufgelöst ist, hat der Arbeitnehmer mit dem Ablauf der Kündigungsfrist Anspruch auf eine Abfindung."
+      ],
+      "sourceSpans": [
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 83,
+          "end": 89,
+          "text": "2 Satz"
+        }
+      ],
+      "details": [
+        {
+          "check": "qualifier",
+          "detail": "The answer drops “2 Satz”.",
+          "spans": [
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 83,
+              "end": 89,
+              "text": "2 Satz"
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "dismissed",
+        "note": "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (wörtlich)."
+      },
+      "id": "f-009"
+    },
+    {
+      "entryId": "kschg-09",
+      "severity": "high",
+      "checks": [
+        "support"
+      ],
+      "reversed": true,
+      "question": "Kann einem Betriebsratsmitglied gekündigt werden?",
+      "answer": "Die Kündigung eines Betriebsratsmitglieds ist unzulässig, es sei denn, daß Tatsachen vorliegen, die zur Kündigung aus wichtigem Grund ohne Einhaltung einer Kündigungsfrist berechtigen, und die erforderliche Zustimmung vorliegt oder durch gerichtliche Entscheidung ersetzt ist.",
+      "answerSpans": [
+        {
+          "where": "answer",
+          "passageIndex": -1,
+          "start": 0,
+          "end": 276,
+          "text": "Die Kündigung eines Betriebsratsmitglieds ist unzulässig, es sei denn, daß Tatsachen vorliegen, die zur Kündigung aus wichtigem Grund ohne Einhaltung einer Kündigungsfrist berechtigen, und die erforderliche Zustimmung vorliegt oder durch gerichtliche Entscheidung ersetzt ist."
+        }
+      ],
+      "sources": [
+        "Die Kündigung eines Mitglieds eines Betriebsrats, einer Jugend- und Auszubildendenvertretung, einer Bordvertretung oder eines Seebetriebsrats ist unzulässig, es sei denn, daß Tatsachen vorliegen, die den Arbeitgeber zur Kündigung aus wichtigem Grund ohne Einhaltung einer Kündigungsfrist berechtigen, und daß die nach § 103 des Betriebsverfassungsgesetzes erforderliche Zustimmung vorliegt oder durch gerichtliche Entscheidung ersetzt ist."
+      ],
+      "sourceSpans": [],
+      "details": [
+        {
+          "check": "support",
+          "detail": "A sentence says the opposite of the passage.",
+          "spans": [
+            {
+              "where": "answer",
+              "passageIndex": -1,
+              "start": 0,
+              "end": 276,
+              "text": "Die Kündigung eines Betriebsratsmitglieds ist unzulässig, es sei denn, daß Tatsachen vorliegen, die zur Kündigung aus wichtigem Grund ohne Einhaltung einer Kündigungsfrist berechtigen, und die erforderliche Zustimmung vorliegt oder durch gerichtliche Entscheidung ersetzt ist."
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "dismissed",
+        "note": "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (wörtlich)."
+      },
+      "id": "f-010"
+    },
+    {
+      "entryId": "kschg-10",
+      "severity": "high",
+      "checks": [
+        "qualifier"
+      ],
+      "reversed": false,
+      "question": "Gilt der Kündigungsschutz im öffentlichen Dienst?",
+      "answer": "Ja, die Regeln gelten für private wie für öffentliche Betriebe und Verwaltungen.",
+      "answerSpans": [],
+      "sources": [
+        "Die Vorschriften des Ersten und Zweiten Abschnitts gelten für Betriebe und Verwaltungen des privaten und des öffentlichen Rechts, vorbehaltlich der Vorschriften des § 24 für die Seeschiffahrts-, Binnenschiffahrts- und Luftverkehrsbetriebe."
+      ],
+      "sourceSpans": [
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 32,
+          "end": 50,
+          "text": "Zweiten Abschnitts"
+        }
+      ],
+      "details": [
+        {
+          "check": "qualifier",
+          "detail": "The answer drops “Zweiten Abschnitts”.",
+          "spans": [
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 32,
+              "end": 50,
+              "text": "Zweiten Abschnitts"
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "dismissed",
+        "note": "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (umformuliert)."
+      },
+      "id": "f-011"
+    },
+    {
+      "entryId": "muschg-04",
+      "severity": "high",
+      "checks": [
+        "qualifier"
+      ],
+      "reversed": false,
+      "question": "Wann verlängert sich die Schutzfrist nach der Geburt?",
+      "answer": "Die Schutzfrist nach der Entbindung verlängert sich auf zehn Wochen.",
+      "answerSpans": [
+        {
+          "where": "answer",
+          "passageIndex": -1,
+          "start": 56,
+          "end": 67,
+          "text": "zehn Wochen"
+        }
+      ],
+      "sources": [
+        "Die Schutzfrist nach der Entbindung verlängert sich auf zwölf Wochen"
+      ],
+      "sourceSpans": [
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 56,
+          "end": 68,
+          "text": "zwölf Wochen"
+        }
+      ],
+      "details": [
+        {
+          "check": "qualifier",
+          "detail": "The answer drops “zwölf Wochen”.",
+          "spans": [
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 56,
+              "end": 68,
+              "text": "zwölf Wochen"
+            },
+            {
+              "where": "answer",
+              "passageIndex": -1,
+              "start": 56,
+              "end": 67,
+              "text": "zehn Wochen"
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "confirmed",
+        "note": "Eine Zahl, Frist oder Grenze weicht von der Quelle ab."
+      },
+      "id": "f-012"
+    },
+    {
+      "entryId": "nachwg-01",
+      "severity": "high",
+      "checks": [
+        "qualifier"
+      ],
+      "reversed": false,
+      "question": "Bis wann muss ich meine Arbeitsbedingungen schriftlich bekommen?",
+      "answer": "Der Arbeitgeber hat spätestens drei Monate nach dem vereinbarten Beginn des Arbeitsverhältnisses die wesentlichen Vertragsbedingungen schriftlich niederzulegen.",
+      "answerSpans": [
+        {
+          "where": "answer",
+          "passageIndex": -1,
+          "start": 20,
+          "end": 42,
+          "text": "spätestens drei Monate"
+        }
+      ],
+      "sources": [
+        "Der Arbeitgeber hat spätestens einen Monat nach dem vereinbarten Beginn des Arbeitsverhältnisses die wesentlichen Vertragsbedingungen schriftlich niederzulegen, die Niederschrift zu unterzeichnen und dem Arbeitnehmer auszuhändigen."
+      ],
+      "sourceSpans": [
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 20,
+          "end": 42,
+          "text": "spätestens einen Monat"
+        }
+      ],
+      "details": [
+        {
+          "check": "qualifier",
+          "detail": "The answer drops “spätestens einen Monat”.",
+          "spans": [
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 20,
+              "end": 42,
+              "text": "spätestens einen Monat"
+            },
+            {
+              "where": "answer",
+              "passageIndex": -1,
+              "start": 20,
+              "end": 42,
+              "text": "spätestens drei Monate"
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "confirmed",
+        "note": "Eine Zahl, Frist oder Grenze weicht von der Quelle ab."
+      },
+      "id": "f-013"
+    },
+    {
+      "entryId": "nachwg-04",
+      "severity": "high",
+      "checks": [
+        "qualifier"
+      ],
+      "reversed": false,
+      "question": "Wie schnell muss eine Änderung meiner Vertragsbedingungen mitgeteilt werden?",
+      "answer": "Ändert sich etwas Wesentliches, muss man es Ihnen innerhalb eines Monats schriftlich mitteilen.",
+      "answerSpans": [],
+      "sources": [
+        "Eine Änderung der wesentlichen Vertragsbedingungen ist dem Arbeitnehmer spätestens einen Monat nach der Änderung schriftlich mitzuteilen."
+      ],
+      "sourceSpans": [
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 72,
+          "end": 94,
+          "text": "spätestens einen Monat"
+        }
+      ],
+      "details": [
+        {
+          "check": "qualifier",
+          "detail": "The answer drops “spätestens einen Monat”.",
+          "spans": [
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 72,
+              "end": 94,
+              "text": "spätestens einen Monat"
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "dismissed",
+        "note": "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (umformuliert)."
+      },
+      "id": "f-014"
+    },
+    {
+      "entryId": "nachwg-05",
+      "severity": "high",
+      "checks": [
+        "qualifier"
+      ],
+      "reversed": false,
+      "question": "Brauche ich einen extra Nachweis, wenn ich schon einen schriftlichen Arbeitsvertrag habe?",
+      "answer": "Wenn Ihnen ein schriftlicher Arbeitsvertrag ausgehändigt worden ist, entfällt die Verpflichtung, soweit der Vertrag die geforderten Angaben enthält.",
+      "answerSpans": [],
+      "sources": [
+        "Wenn dem Arbeitnehmer ein schriftlicher Arbeitsvertrag ausgehändigt worden ist, entfällt die Verpflichtung nach den Absätzen 1 und 2, soweit der Vertrag die in den Absätzen 1 bis 3 geforderten Angaben enthält."
+      ],
+      "sourceSpans": [
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 125,
+          "end": 126,
+          "text": "1"
+        },
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 131,
+          "end": 132,
+          "text": "2"
+        },
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 173,
+          "end": 174,
+          "text": "1"
+        },
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 179,
+          "end": 200,
+          "text": "3 geforderten Angaben"
+        }
+      ],
+      "details": [
+        {
+          "check": "qualifier",
+          "detail": "The answer drops “1” and “2” and “1” and “3 geforderten Angaben”.",
+          "spans": [
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 125,
+              "end": 126,
+              "text": "1"
+            },
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 131,
+              "end": 132,
+              "text": "2"
+            },
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 173,
+              "end": 174,
+              "text": "1"
+            },
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 179,
+              "end": 200,
+              "text": "3 geforderten Angaben"
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "dismissed",
+        "note": "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (wörtlich)."
+      },
+      "id": "f-015"
+    },
+    {
+      "entryId": "nachwg-06",
+      "severity": "high",
+      "checks": [
+        "omission"
+      ],
+      "reversed": false,
+      "question": "Wann muss ich die Niederschrift bei einem Auslandseinsatz bekommen?",
+      "answer": "Wenn Sie länger als einen Monat außerhalb Deutschlands arbeiten, muss Ihnen die Niederschrift vor Ihrer Abreise ausgehändigt werden.",
+      "answerSpans": [],
+      "sources": [
+        "Hat der Arbeitnehmer seine Arbeitsleistung länger als einen Monat außerhalb der Bundesrepublik Deutschland zu erbringen, so muß die Niederschrift dem Arbeitnehmer vor seiner Abreise ausgehändigt werden"
+      ],
+      "sourceSpans": [
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 0,
+          "end": 119,
+          "text": "Hat der Arbeitnehmer seine Arbeitsleistung länger als einen Monat außerhalb der Bundesrepublik Deutschland zu erbringen"
+        }
+      ],
+      "details": [
+        {
+          "check": "omission",
+          "detail": "The answer drops “Hat der Arbeitnehmer seine Arbeitsleistung länger als einen Monat außerhalb der Bundesrepublik Deutschland zu erbringen”.",
+          "spans": [
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 0,
+              "end": 119,
+              "text": "Hat der Arbeitnehmer seine Arbeitsleistung länger als einen Monat außerhalb der Bundesrepublik Deutschland zu erbringen"
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "dismissed",
+        "note": "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (wörtlich)."
+      },
+      "id": "f-016"
+    },
+    {
+      "entryId": "tzbfg-02",
+      "severity": "high",
+      "checks": [
+        "qualifier"
+      ],
+      "reversed": false,
+      "question": "Gilt der Teilzeitanspruch auch in kleinen Firmen?",
+      "answer": "Der Anspruch auf Verringerung der Arbeitszeit gilt unabhängig von der Größe des Arbeitgebers.",
+      "answerSpans": [],
+      "sources": [
+        "Für den Anspruch auf Verringerung der Arbeitszeit gilt die Voraussetzung, dass der Arbeitgeber, unabhängig von der Anzahl der Personen in Berufsbildung, in der Regel mehr als 15 Arbeitnehmer beschäftigt."
+      ],
+      "sourceSpans": [
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 166,
+          "end": 190,
+          "text": "mehr als 15 Arbeitnehmer"
+        }
+      ],
+      "details": [
+        {
+          "check": "qualifier",
+          "detail": "The answer drops “mehr als 15 Arbeitnehmer”.",
+          "spans": [
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 166,
+              "end": 190,
+              "text": "mehr als 15 Arbeitnehmer"
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "confirmed",
+        "note": "Die Aussage steht so nicht in der Quelle."
+      },
+      "id": "f-017"
+    },
+    {
+      "entryId": "tzbfg-04",
+      "severity": "high",
+      "checks": [
+        "omission"
+      ],
+      "reversed": false,
+      "question": "Muss mein Arbeitgeber der Teilzeit zustimmen?",
+      "answer": "Der Arbeitgeber hat der Verringerung der Arbeitszeit zuzustimmen und ihre Verteilung entsprechend Ihren Wünschen festzulegen.",
+      "answerSpans": [],
+      "sources": [
+        "Der Arbeitgeber hat der Verringerung der Arbeitszeit zuzustimmen und ihre Verteilung entsprechend den Wünschen des Arbeitnehmers festzulegen, soweit betriebliche Gründe nicht entgegenstehen."
+      ],
+      "sourceSpans": [
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 142,
+          "end": 189,
+          "text": "soweit betriebliche Gründe nicht entgegenstehen"
+        }
+      ],
+      "details": [
+        {
+          "check": "omission",
+          "detail": "The answer drops “soweit betriebliche Gründe nicht entgegenstehen”.",
+          "spans": [
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 142,
+              "end": 189,
+              "text": "soweit betriebliche Gründe nicht entgegenstehen"
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "confirmed",
+        "note": "Eine Bedingung oder Ausnahme der Quelle fehlt."
+      },
+      "id": "f-018"
+    },
+    {
+      "entryId": "tzbfg-06",
+      "severity": "high",
+      "checks": [
+        "omission"
+      ],
+      "reversed": false,
+      "question": "Dürfen Teilzeitkräfte schlechter behandelt werden?",
+      "answer": "Ein teilzeitbeschäftigter Arbeitnehmer darf wegen der Teilzeitarbeit nicht schlechter behandelt werden als ein vergleichbarer vollzeitbeschäftigter Arbeitnehmer.",
+      "answerSpans": [],
+      "sources": [
+        "Ein teilzeitbeschäftigter Arbeitnehmer darf wegen der Teilzeitarbeit nicht schlechter behandelt werden als ein vergleichbarer vollzeitbeschäftigter Arbeitnehmer, es sei denn, dass sachliche Gründe eine unterschiedliche Behandlung rechtfertigen."
+      ],
+      "sourceSpans": [
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 162,
+          "end": 243,
+          "text": "es sei denn, dass sachliche Gründe eine unterschiedliche Behandlung rechtfertigen"
+        }
+      ],
+      "details": [
+        {
+          "check": "omission",
+          "detail": "The answer drops “es sei denn, dass sachliche Gründe eine unterschiedliche Behandlung rechtfertigen”.",
+          "spans": [
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 162,
+              "end": 243,
+              "text": "es sei denn, dass sachliche Gründe eine unterschiedliche Behandlung rechtfertigen"
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "confirmed",
+        "note": "Eine Bedingung oder Ausnahme der Quelle fehlt."
+      },
+      "id": "f-019"
+    },
+    {
+      "entryId": "tzbfg-10",
+      "severity": "high",
+      "checks": [
+        "qualifier"
+      ],
+      "reversed": false,
+      "question": "Wie lange habe ich Zeit, gegen eine unwirksame Befristung zu klagen?",
+      "answer": "Sie müssen innerhalb von drei Monaten nach dem vereinbarten Ende des befristeten Arbeitsvertrages Klage beim Arbeitsgericht erheben.",
+      "answerSpans": [
+        {
+          "where": "answer",
+          "passageIndex": -1,
+          "start": 25,
+          "end": 37,
+          "text": "drei Monaten"
+        }
+      ],
+      "sources": [
+        "Will der Arbeitnehmer geltend machen, dass die Befristung eines Arbeitsvertrages rechtsunwirksam ist, so muss er innerhalb von drei Wochen nach dem vereinbarten Ende des befristeten Arbeitsvertrages Klage beim Arbeitsgericht auf Feststellung erheben, dass das Arbeitsverhältnis auf Grund der Befristung nicht beendet ist."
+      ],
+      "sourceSpans": [
+        {
+          "where": "passage",
+          "passageIndex": 0,
+          "start": 127,
+          "end": 138,
+          "text": "drei Wochen"
+        }
+      ],
+      "details": [
+        {
+          "check": "qualifier",
+          "detail": "The answer drops “drei Wochen”.",
+          "spans": [
+            {
+              "where": "passage",
+              "passageIndex": 0,
+              "start": 127,
+              "end": 138,
+              "text": "drei Wochen"
+            },
+            {
+              "where": "answer",
+              "passageIndex": -1,
+              "start": 25,
+              "end": 37,
+              "text": "drei Monaten"
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "confirmed",
+        "note": "Eine Zahl, Frist oder Grenze weicht von der Quelle ab."
+      },
+      "id": "f-020"
+    },
+    {
+      "entryId": "entgfg-04",
+      "severity": "medium",
+      "checks": [
+        "support"
+      ],
+      "reversed": false,
+      "question": "Was gilt, wenn ich wegen derselben Krankheit wieder arbeitsunfähig werde?",
+      "answer": "Bei erneuter Arbeitsunfähigkeit wegen derselben Krankheit können Sie unter bestimmten Fristen noch einmal bis zu sechs Wochen Lohnfortzahlung bekommen.",
+      "answerSpans": [
+        {
+          "where": "answer",
+          "passageIndex": -1,
+          "start": 0,
+          "end": 151,
+          "text": "Bei erneuter Arbeitsunfähigkeit wegen derselben Krankheit können Sie unter bestimmten Fristen noch einmal bis zu sechs Wochen Lohnfortzahlung bekommen."
+        }
+      ],
+      "sources": [
+        "Wird der Arbeitnehmer infolge derselben Krankheit erneut arbeitsunfähig, so verliert er wegen der erneuten Arbeitsunfähigkeit den Anspruch nach Satz 1 für einen weiteren Zeitraum von höchstens sechs Wochen nicht, wenn"
+      ],
+      "sourceSpans": [],
+      "details": [
+        {
+          "check": "support",
+          "detail": "A sentence is not in the retrieved passages.",
+          "spans": [
+            {
+              "where": "answer",
+              "passageIndex": -1,
+              "start": 0,
+              "end": 151,
+              "text": "Bei erneuter Arbeitsunfähigkeit wegen derselben Krankheit können Sie unter bestimmten Fristen noch einmal bis zu sechs Wochen Lohnfortzahlung bekommen."
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "dismissed",
+        "note": "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (umformuliert)."
+      },
+      "id": "f-021"
+    },
+    {
+      "entryId": "entgfg-09",
+      "severity": "medium",
+      "checks": [
+        "support"
+      ],
+      "reversed": false,
+      "question": "Wie hoch ist die Entgeltfortzahlung?",
+      "answer": "Sie bekommen das Gehalt weiter, das Ihnen für Ihre normale regelmäßige Arbeitszeit zusteht.",
+      "answerSpans": [
+        {
+          "where": "answer",
+          "passageIndex": -1,
+          "start": 0,
+          "end": 91,
+          "text": "Sie bekommen das Gehalt weiter, das Ihnen für Ihre normale regelmäßige Arbeitszeit zusteht."
+        }
+      ],
+      "sources": [
+        "Für den in § 3 Abs. 1 oder in § 3a Absatz 1 bezeichneten Zeitraum ist dem Arbeitnehmer das ihm bei der für ihn maßgebenden regelmäßigen Arbeitszeit zustehende Arbeitsentgelt fortzuzahlen."
+      ],
+      "sourceSpans": [],
+      "details": [
+        {
+          "check": "support",
+          "detail": "A sentence is not in the retrieved passages.",
+          "spans": [
+            {
+              "where": "answer",
+              "passageIndex": -1,
+              "start": 0,
+              "end": 91,
+              "text": "Sie bekommen das Gehalt weiter, das Ihnen für Ihre normale regelmäßige Arbeitszeit zusteht."
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "dismissed",
+        "note": "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (umformuliert)."
+      },
+      "id": "f-022"
+    },
+    {
+      "entryId": "muschg-06",
+      "severity": "medium",
+      "checks": [
+        "support"
+      ],
+      "reversed": false,
+      "question": "Darf ich als Schwangere sonntags arbeiten?",
+      "answer": "Grundsätzlich nicht. Ausnahmen gibt es nur unter bestimmten Voraussetzungen, zum Beispiel wenn Sie ausdrücklich zustimmen.",
+      "answerSpans": [
+        {
+          "where": "answer",
+          "passageIndex": -1,
+          "start": 21,
+          "end": 122,
+          "text": "Ausnahmen gibt es nur unter bestimmten Voraussetzungen, zum Beispiel wenn Sie ausdrücklich zustimmen."
+        }
+      ],
+      "sources": [
+        "Der Arbeitgeber darf eine schwangere oder stillende Frau nicht an Sonn- und Feiertagen beschäftigen. Er darf sie an Sonn- und Feiertagen nur dann beschäftigen, wenn"
+      ],
+      "sourceSpans": [],
+      "details": [
+        {
+          "check": "support",
+          "detail": "A sentence is not in the retrieved passages.",
+          "spans": [
+            {
+              "where": "answer",
+              "passageIndex": -1,
+              "start": 21,
+              "end": 122,
+              "text": "Ausnahmen gibt es nur unter bestimmten Voraussetzungen, zum Beispiel wenn Sie ausdrücklich zustimmen."
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "dismissed",
+        "note": "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (umformuliert)."
+      },
+      "id": "f-023"
+    },
+    {
+      "entryId": "tzbfg-09",
+      "severity": "medium",
+      "checks": [
+        "support"
+      ],
+      "reversed": false,
+      "question": "Darf mein früherer Arbeitgeber mich ohne Grund befristet einstellen?",
+      "answer": "Nein, eine sachgrundlose Befristung scheidet aus, wenn Sie schon einmal bei demselben Arbeitgeber angestellt waren.",
+      "answerSpans": [
+        {
+          "where": "answer",
+          "passageIndex": -1,
+          "start": 0,
+          "end": 115,
+          "text": "Nein, eine sachgrundlose Befristung scheidet aus, wenn Sie schon einmal bei demselben Arbeitgeber angestellt waren."
+        }
+      ],
+      "sources": [
+        "Eine Befristung nach Satz 1 ist nicht zulässig, wenn mit demselben Arbeitgeber bereits zuvor ein befristetes oder unbefristetes Arbeitsverhältnis bestanden hat."
+      ],
+      "sourceSpans": [],
+      "details": [
+        {
+          "check": "support",
+          "detail": "A sentence is not in the retrieved passages.",
+          "spans": [
+            {
+              "where": "answer",
+              "passageIndex": -1,
+              "start": 0,
+              "end": 115,
+              "text": "Nein, eine sachgrundlose Befristung scheidet aus, wenn Sie schon einmal bei demselben Arbeitgeber angestellt waren."
+            }
+          ]
+        }
+      ],
+      "review": {
+        "status": "dismissed",
+        "note": "Fehlalarm: Die Antwort gibt die Quelle richtig wieder (umformuliert)."
+      },
+      "id": "f-024"
+    }
+  ],
+  "missed": [],
+  "summary": {
+    "answers": 70,
+    "passed": 46,
+    "flagged": 24,
+    "high": 20,
+    "medium": 4,
+    "confirmed": 13,
+    "dismissed": 11,
+    "pending": 0,
+    "missed": 0,
+    "precision": 0.5416666666666666
+  }
+}

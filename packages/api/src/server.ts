@@ -1,5 +1,8 @@
+import { readFile } from "node:fs/promises";
 import { createServer } from "node:http";
+import { extname } from "node:path";
 import { createHandler } from "./handler";
+import { staticFile, TYPES } from "./static";
 
 const port = Number(process.env.PORT ?? 8787);
 const handle = createHandler({
@@ -7,9 +10,29 @@ const handle = createHandler({
   corsOrigin: process.env.CORS_ORIGIN,
 });
 
+/** When set, the playground's built files are served from here next to the API. */
+const staticDir = process.env.STATIC_DIR;
+
 /** Adapt node:http to the fetch-style handler. */
 const server = createServer(async (req, res) => {
   try {
+    const path = new URL(req.url ?? "/", "http://localhost").pathname;
+    if (staticDir && req.method === "GET" && path !== "/health" && !path.startsWith("/v1/")) {
+      const file = staticFile(staticDir, path);
+      const body = file ? await readFile(file).catch(() => null) : null;
+      if (!file || !body) {
+        res.writeHead(404, { "content-type": "text/plain" });
+        res.end("Not found");
+        return;
+      }
+      res.writeHead(200, {
+        "content-type": TYPES[extname(file)] ?? "application/octet-stream",
+        "cache-control": path.startsWith("/assets/") ? "public, max-age=31536000, immutable" : "no-cache",
+        "x-content-type-options": "nosniff",
+      });
+      res.end(body);
+      return;
+    }
     const chunks: Buffer[] = [];
     for await (const chunk of req) chunks.push(chunk as Buffer);
     const headers = new Headers();
@@ -37,5 +60,5 @@ const server = createServer(async (req, res) => {
 });
 
 server.listen(port, () => {
-  console.log(`answer-checker api on http://localhost:${port}/v1/check`);
+  console.log(`answer-checker on http://localhost:${port}${staticDir ? "" : "/v1/check"}`);
 });

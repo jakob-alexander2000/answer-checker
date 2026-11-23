@@ -2,7 +2,7 @@
 
 Checks a document chatbot's answer against the passages it answered from, claim by claim. English and German. Runs offline: no model, no keys, the same result every time.
 
-A support bot reads the handbook and says "Employees get 30 days of leave." The handbook says full-time employees get 30 days after the probation period. Every word of the answer is in the source and it is still wrong. This catches that.
+A support bot reads the handbook and says "Employees get 30 days of leave." The handbook says full-time employees get 30 days after the probation period. Everything the answer says is in the source, and it is still wrong. This catches that.
 
 ## The checks
 
@@ -19,7 +19,12 @@ Optional extras:
 - **Voice**: give two or more pages in your house voice and the answer gets a Burrows' Delta reading (close, drifting, off-voice). The TypeScript matches a Python reference to 1e-9.
 - **Claim mode**: pass your own model call (`complete(prompt) => Promise<string>`) and each claim gets a pass, fail or unsupported verdict with the evidence quoted. The engine never calls a model by itself.
 
-## Use it as a library
+## Try it
+
+- **Playground**: `docker build -t answer-checker . && docker run --rm -p 8787:8787 answer-checker`, then open http://localhost:8787. Six samples in English and German, or paste your own.
+- **API**: `POST /v1/check` on the same port. See [docs/api.md](docs/api.md).
+- **GitHub Action**: run your bot over a fixed set of questions on every pull request and fail the build when an answer gets worse. See [docs/action.md](docs/action.md).
+- **Library**: `checkAnswer({ question, answer, sources })` from `@answer-checker/core`.
 
 ```ts
 import { checkAnswer } from "@answer-checker/core";
@@ -34,30 +39,17 @@ result.verdict; // "fail"
 result.failed;  // ["qualifier"]
 ```
 
-## Use it over HTTP
-
-```sh
-npm install
-npm start --workspace @answer-checker/api   # http://localhost:8787
-```
-
-```sh
-curl -s localhost:8787/v1/check -H 'content-type: application/json' -d '{
-  "question": "How many days of leave do employees get?",
-  "answer": "Employees receive 30 days of paid annual leave.",
-  "sources": ["Full-time employees receive 30 days of paid annual leave after the probation period."]
-}'
-```
-
-`POST /v1/check` takes `question`, `answer`, `sources` (strings or `{ id, text, title }`), and optionally `document` and `voice: { reference, language }`. It returns `verdict`, `failed`, `checks`, `claims`, `voice` and `engine`. Limits: 200 kB body, 20 sources, 60 requests a minute per address (`RATE_PER_MINUTE`). `CORS_ORIGIN` allows one browser origin. `GET /health` for probes.
-
-The handler is a plain `(Request) => Response`, so it also runs on Workers, Deno and Bun.
+Start with the [quickstart](docs/quickstart.md). [How it judges](docs/how-it-judges.md) explains each check, and [limits](docs/limits.md) says what it misses.
 
 ## Layout
 
 ```
-packages/core   checks, retrieval helpers, voice, claim mode, tests
-packages/api    POST /v1/check, rate limit, node server
+packages/core     checks, voice, claim mode, samples, tests
+packages/api      POST /v1/check, rate limit, node server
+packages/web      the playground
+packages/action   the GitHub Action (action.yml at the root)
+examples/         a checks.yml built from the samples
+docs/             quickstart, API, action, how it judges, limits
 ```
 
 ## Where it came from
@@ -66,6 +58,6 @@ The checks started as [Retrieval Autopsy](https://github.com/jakob-alexander2000
 
 ## Limits
 
-The checks are lexical. They catch dropped conditions and unsupported sentences well and paraphrase poorly: a correct answer in very different words can fail Support. Claim mode is the answer to that, at the cost of a model call.
+The checks are lexical, so a correct paraphrase can fail and the German patterns are still young. [docs/limits.md](docs/limits.md) has the full list.
 
 MIT licensed.

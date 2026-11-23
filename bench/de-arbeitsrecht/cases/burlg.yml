@@ -1,0 +1,110 @@
+law: BUrlG
+source: burlg.md
+cases:
+  - id: burlg-01
+    question: Wie viel Urlaub steht mir gesetzlich mindestens zu?
+    passage: Der Urlaub beträgt jährlich mindestens 24 Werktage.
+    faithful: Der Urlaub beträgt jährlich mindestens 24 Werktage.
+    paraphrase: Gesetzlich haben Sie Anspruch auf wenigstens 24 Werktage Urlaub pro Jahr.
+    drifted: Der Urlaub beträgt jährlich 20 Werktage.
+    drift: qualifier
+    note: number changed and "mindestens" dropped
+
+  - id: burlg-02
+    question: Ab wann habe ich Anspruch auf den vollen Urlaub?
+    passage: Der volle Urlaubsanspruch wird erstmalig nach sechsmonatigem Bestehen des Arbeitsverhältnisses erworben.
+    faithful: Der volle Urlaubsanspruch wird erstmalig nach sechsmonatigem Bestehen des Arbeitsverhältnisses erworben.
+    paraphrase: Den vollen Urlaub bekommen Sie zum ersten Mal, wenn Ihr Arbeitsverhältnis sechs Monate besteht.
+    drifted: Der volle Urlaubsanspruch wird mit Beginn des Arbeitsverhältnisses erworben.
+    drift: qualifier
+    note: the six-month waiting period is gone
+
+  - id: burlg-03
+    question: Wer gilt als Arbeitnehmer im Sinne des Urlaubsgesetzes?
+    passage: Arbeitnehmer im Sinne des Gesetzes sind Arbeiter und Angestellte sowie die zu ihrer Berufsausbildung Beschäftigten.
+    faithful: Arbeitnehmer im Sinne des Gesetzes sind Arbeiter und Angestellte sowie die zu ihrer Berufsausbildung Beschäftigten.
+    paraphrase: Als Arbeitnehmer zählen Arbeiter, Angestellte und Auszubildende.
+    drifted: Arbeitnehmer im Sinne des Gesetzes sind alle Beschäftigten, auch Selbstständige und Freiberufler.
+    drift: support
+    note: invents that self-employed people are covered
+
+  - id: burlg-04
+    question: Muss mein Arbeitgeber meine Urlaubswünsche berücksichtigen?
+    passage: Bei der zeitlichen Festlegung des Urlaubs sind die Urlaubswünsche des Arbeitnehmers zu berücksichtigen, es sei denn, daß ihrer Berücksichtigung dringende betriebliche Belange oder Urlaubswünsche anderer Arbeitnehmer, die unter sozialen Gesichtspunkten den Vorrang verdienen, entgegenstehen.
+    faithful: Ihre Urlaubswünsche sind zu berücksichtigen, es sei denn, daß dringende betriebliche Belange oder Urlaubswünsche anderer Arbeitnehmer, die unter sozialen Gesichtspunkten den Vorrang verdienen, entgegenstehen.
+    paraphrase: Ja, Ihr Arbeitgeber muss Ihre Wünsche berücksichtigen, außer dringende betriebliche Gründe oder sozial vorrangige Wünsche von Kollegen sprechen dagegen.
+    drifted: Bei der zeitlichen Festlegung des Urlaubs sind die Urlaubswünsche des Arbeitnehmers zu berücksichtigen.
+    drift: omission
+    note: drops the "es sei denn" exception
+
+  - id: burlg-05
+    question: Muss ich meinen Urlaub am Stück nehmen?
+    passage: Der Urlaub ist zusammenhängend zu gewähren, es sei denn, daß dringende betriebliche oder in der Person des Arbeitnehmers liegende Gründe eine Teilung des Urlaubs erforderlich machen.
+    faithful: Der Urlaub ist zusammenhängend zu gewähren, es sei denn, daß dringende betriebliche oder in der Person des Arbeitnehmers liegende Gründe eine Teilung des Urlaubs erforderlich machen.
+    paraphrase: Grundsätzlich gibt es den Urlaub am Stück. Geteilt wird er nur, wenn dringende betriebliche oder persönliche Gründe das erfordern.
+    drifted: Der Urlaub ist immer zusammenhängend zu gewähren.
+    drift: omission
+    note: drops the exception and adds "immer"
+
+  - id: burlg-06
+    question: Wie lang muss ein Urlaubsteil mindestens sein, wenn der Urlaub geteilt wird?
+    passage: Kann der Urlaub aus diesen Gründen nicht zusammenhängend gewährt werden, und hat der Arbeitnehmer Anspruch auf Urlaub von mehr als zwölf Werktagen, so muß einer der Urlaubsteile mindestens zwölf aufeinanderfolgende Werktage umfassen.
+    faithful: Wenn Sie Anspruch auf mehr als zwölf Werktage Urlaub haben, muss einer der Urlaubsteile mindestens zwölf aufeinanderfolgende Werktage umfassen.
+    paraphrase: Steht Ihnen mehr als zwölf Werktage Urlaub zu, muss ein Teil mindestens zwölf Werktage am Stück dauern.
+    drifted: Einer der Urlaubsteile muss mindestens zwölf aufeinanderfolgende Werktage umfassen.
+    drift: omission
+    note: drops the condition "Anspruch auf mehr als zwölf Werktage"
+
+  - id: burlg-07
+    question: Kann ich Resturlaub ins nächste Jahr mitnehmen?
+    passage: Eine Übertragung des Urlaubs auf das nächste Kalenderjahr ist nur statthaft, wenn dringende betriebliche oder in der Person des Arbeitnehmers liegende Gründe dies rechtfertigen.
+    faithful: Eine Übertragung des Urlaubs auf das nächste Kalenderjahr ist nur statthaft, wenn dringende betriebliche oder in der Person des Arbeitnehmers liegende Gründe dies rechtfertigen.
+    paraphrase: Nur wenn dringende betriebliche oder persönliche Gründe vorliegen, darf der Urlaub ins nächste Jahr übertragen werden.
+    drifted: Eine Übertragung des Urlaubs auf das nächste Kalenderjahr ist statthaft.
+    drift: omission
+    note: drops "nur ... wenn"
+
+  - id: burlg-08
+    question: Bis wann muss übertragener Urlaub genommen werden?
+    passage: Im Fall der Übertragung muß der Urlaub in den ersten drei Monaten des folgenden Kalenderjahrs gewährt und genommen werden.
+    faithful: Im Fall der Übertragung muss der Urlaub in den ersten drei Monaten des folgenden Kalenderjahrs gewährt und genommen werden.
+    paraphrase: Übertragener Urlaub muss bis Ende März des Folgejahres genommen sein.
+    drifted: Im Fall der Übertragung muss der Urlaub im folgenden Kalenderjahr genommen werden.
+    drift: qualifier
+    note: drops "in den ersten drei Monaten"
+
+  - id: burlg-09
+    question: Was passiert mit meinem Urlaub, wenn das Arbeitsverhältnis endet?
+    passage: Kann der Urlaub wegen Beendigung des Arbeitsverhältnisses ganz oder teilweise nicht mehr gewährt werden, so ist er abzugelten.
+    faithful: Kann der Urlaub wegen Beendigung des Arbeitsverhältnisses ganz oder teilweise nicht mehr gewährt werden, so ist er abzugelten.
+    paraphrase: Wenn Sie den Urlaub wegen des Endes Ihres Arbeitsverhältnisses nicht mehr nehmen können, wird er ausbezahlt.
+    drifted: Kann der Urlaub wegen Beendigung des Arbeitsverhältnisses nicht mehr gewährt werden, so verfällt er.
+    drift: support
+    note: says it lapses, the law says it is paid out
+
+  - id: burlg-10
+    question: Bekomme ich Urlaub, wenn mein alter Arbeitgeber mir dieses Jahr schon Urlaub gegeben hat?
+    passage: Der Anspruch auf Urlaub besteht nicht, soweit dem Arbeitnehmer für das laufende Kalenderjahr bereits von einem früheren Arbeitgeber Urlaub gewährt worden ist.
+    faithful: Der Anspruch auf Urlaub besteht nicht, soweit Ihnen für das laufende Kalenderjahr bereits von einem früheren Arbeitgeber Urlaub gewährt worden ist.
+    paraphrase: Urlaub, den Sie in diesem Jahr schon bei einem früheren Arbeitgeber bekommen haben, wird angerechnet und steht Ihnen nicht noch einmal zu.
+    drifted: Der Anspruch auf Urlaub besteht für jedes Arbeitsverhältnis neu, egal was ein früherer Arbeitgeber gewährt hat.
+    drift: support
+    note: reverses the rule
+
+  - id: burlg-11
+    question: Wie werden halbe Urlaubstage gerundet?
+    passage: Bruchteile von Urlaubstagen, die mindestens einen halben Tag ergeben, sind auf volle Urlaubstage aufzurunden.
+    faithful: Bruchteile von Urlaubstagen, die mindestens einen halben Tag ergeben, sind auf volle Urlaubstage aufzurunden.
+    paraphrase: Ergibt sich ein Bruchteil von einem halben Tag oder mehr, wird auf einen ganzen Urlaubstag aufgerundet.
+    drifted: Bruchteile von Urlaubstagen sind auf volle Urlaubstage aufzurunden.
+    drift: qualifier
+    note: drops "die mindestens einen halben Tag ergeben"
+
+  - id: burlg-12
+    question: Darf ich im Urlaub nebenbei arbeiten?
+    passage: Während des Urlaubs darf der Arbeitnehmer keine dem Urlaubszweck widersprechende Erwerbstätigkeit leisten.
+    faithful: Während des Urlaubs dürfen Sie keine dem Urlaubszweck widersprechende Erwerbstätigkeit leisten.
+    paraphrase: Eine Erwerbstätigkeit, die dem Erholungszweck des Urlaubs widerspricht, ist während des Urlaubs nicht erlaubt.
+    drifted: Während des Urlaubs darf der Arbeitnehmer keine Erwerbstätigkeit leisten.
+    drift: qualifier
+    note: drops "dem Urlaubszweck widersprechende"

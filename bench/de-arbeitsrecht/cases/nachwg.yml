@@ -1,0 +1,56 @@
+law: NachwG
+source: nachwg.md
+cases:
+  - id: nachwg-01
+    question: Bis wann muss ich meine Arbeitsbedingungen schriftlich bekommen?
+    passage: Der Arbeitgeber hat spätestens einen Monat nach dem vereinbarten Beginn des Arbeitsverhältnisses die wesentlichen Vertragsbedingungen schriftlich niederzulegen, die Niederschrift zu unterzeichnen und dem Arbeitnehmer auszuhändigen.
+    faithful: Der Arbeitgeber hat spätestens einen Monat nach dem vereinbarten Beginn des Arbeitsverhältnisses die wesentlichen Vertragsbedingungen schriftlich niederzulegen, zu unterzeichnen und Ihnen auszuhändigen.
+    paraphrase: Spätestens einen Monat nach Arbeitsbeginn muss Ihr Arbeitgeber Ihnen die wesentlichen Bedingungen unterschrieben und schriftlich aushändigen.
+    drifted: Der Arbeitgeber hat spätestens drei Monate nach dem vereinbarten Beginn des Arbeitsverhältnisses die wesentlichen Vertragsbedingungen schriftlich niederzulegen.
+    drift: qualifier
+    note: one month became three
+
+  - id: nachwg-02
+    question: Gilt das Nachweisgesetz auch für Aushilfen?
+    passage: Dieses Gesetz gilt für alle Arbeitnehmer, es sei denn, daß sie nur zur vorübergehenden Aushilfe von höchstens einem Monat eingestellt werden.
+    faithful: Dieses Gesetz gilt für alle Arbeitnehmer, es sei denn, daß sie nur zur vorübergehenden Aushilfe von höchstens einem Monat eingestellt werden.
+    paraphrase: Ja, außer bei einer vorübergehenden Aushilfe, die höchstens einen Monat dauert.
+    drifted: Dieses Gesetz gilt für alle Arbeitnehmer.
+    drift: omission
+    note: drops the "es sei denn" exception for short temp work
+
+  - id: nachwg-03
+    question: Kann ich den Nachweis per E-Mail bekommen?
+    passage: Der Nachweis der wesentlichen Vertragsbedingungen in elektronischer Form ist ausgeschlossen.
+    faithful: Der Nachweis der wesentlichen Vertragsbedingungen in elektronischer Form ist ausgeschlossen.
+    paraphrase: Nein, die elektronische Form ist für diesen Nachweis nicht erlaubt.
+    drifted: Der Nachweis der wesentlichen Vertragsbedingungen kann auch in elektronischer Form erfolgen.
+    drift: support
+    note: reverses the ban on electronic form
+
+  - id: nachwg-04
+    question: Wie schnell muss eine Änderung meiner Vertragsbedingungen mitgeteilt werden?
+    passage: Eine Änderung der wesentlichen Vertragsbedingungen ist dem Arbeitnehmer spätestens einen Monat nach der Änderung schriftlich mitzuteilen.
+    faithful: Eine Änderung der wesentlichen Vertragsbedingungen ist Ihnen spätestens einen Monat nach der Änderung schriftlich mitzuteilen.
+    paraphrase: Ändert sich etwas Wesentliches, muss man es Ihnen innerhalb eines Monats schriftlich mitteilen.
+    drifted: Eine Änderung der wesentlichen Vertragsbedingungen ist Ihnen spätestens einen Monat nach der Änderung mitzuteilen, auch mündlich.
+    drift: support
+    note: invents that oral notice is enough
+
+  - id: nachwg-05
+    question: Brauche ich einen extra Nachweis, wenn ich schon einen schriftlichen Arbeitsvertrag habe?
+    passage: Wenn dem Arbeitnehmer ein schriftlicher Arbeitsvertrag ausgehändigt worden ist, entfällt die Verpflichtung nach den Absätzen 1 und 2, soweit der Vertrag die in den Absätzen 1 bis 3 geforderten Angaben enthält.
+    faithful: Wenn Ihnen ein schriftlicher Arbeitsvertrag ausgehändigt worden ist, entfällt die Verpflichtung, soweit der Vertrag die geforderten Angaben enthält.
+    paraphrase: Nein, sofern Ihr schriftlicher Vertrag schon alle geforderten Angaben enthält.
+    drifted: Wenn Ihnen ein schriftlicher Arbeitsvertrag ausgehändigt worden ist, entfällt die Verpflichtung.
+    drift: omission
+    note: drops "soweit der Vertrag die geforderten Angaben enthält"
+
+  - id: nachwg-06
+    question: Wann muss ich die Niederschrift bei einem Auslandseinsatz bekommen?
+    passage: Hat der Arbeitnehmer seine Arbeitsleistung länger als einen Monat außerhalb der Bundesrepublik Deutschland zu erbringen, so muß die Niederschrift dem Arbeitnehmer vor seiner Abreise ausgehändigt werden
+    faithful: Wenn Sie länger als einen Monat außerhalb Deutschlands arbeiten, muss Ihnen die Niederschrift vor Ihrer Abreise ausgehändigt werden.
+    paraphrase: Bei einem Auslandseinsatz von mehr als einem Monat bekommen Sie die Niederschrift vor der Abreise.
+    drifted: Bei jedem Auslandseinsatz muss Ihnen die Niederschrift innerhalb eines Monats nach der Abreise ausgehändigt werden.
+    drift: support
+    note: drops the one-month threshold and moves the deadline after departure

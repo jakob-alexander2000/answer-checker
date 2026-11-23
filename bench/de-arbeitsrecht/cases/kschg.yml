@@ -1,0 +1,92 @@
+law: KSchG
+source: kschg.md
+cases:
+  - id: kschg-01
+    question: Ab wann gilt für mich der Kündigungsschutz?
+    passage: Die Kündigung des Arbeitsverhältnisses gegenüber einem Arbeitnehmer, dessen Arbeitsverhältnis in demselben Betrieb oder Unternehmen ohne Unterbrechung länger als sechs Monate bestanden hat, ist rechtsunwirksam, wenn sie sozial ungerechtfertigt ist.
+    faithful: Die Kündigung gegenüber einem Arbeitnehmer, dessen Arbeitsverhältnis in demselben Betrieb oder Unternehmen ohne Unterbrechung länger als sechs Monate bestanden hat, ist rechtsunwirksam, wenn sie sozial ungerechtfertigt ist.
+    paraphrase: Wenn Sie länger als sechs Monate ohne Unterbrechung im selben Betrieb oder Unternehmen sind, ist eine sozial ungerechtfertigte Kündigung unwirksam.
+    drifted: Die Kündigung eines Arbeitnehmers ist rechtsunwirksam, wenn sie sozial ungerechtfertigt ist.
+    drift: qualifier
+    note: drops the six-month waiting period
+
+  - id: kschg-02
+    question: Gilt das Kündigungsschutzgesetz auch in sehr kleinen Betrieben?
+    passage: Die Vorschriften des Ersten Abschnitts gelten mit Ausnahme der §§ 4 bis 7 und des § 13 Abs. 1 Satz 1 und 2 nicht für Betriebe und Verwaltungen, in denen in der Regel fünf oder weniger Arbeitnehmer ausschließlich der zu ihrer Berufsbildung Beschäftigten beschäftigt werden.
+    faithful: Die Vorschriften des Ersten Abschnitts gelten mit Ausnahme der §§ 4 bis 7 und des § 13 Abs. 1 Satz 1 und 2 nicht für Betriebe und Verwaltungen, in denen in der Regel fünf oder weniger Arbeitnehmer ausschließlich der zu ihrer Berufsbildung Beschäftigten beschäftigt werden.
+    paraphrase: Nein, der allgemeine Kündigungsschutz gilt nicht in Betrieben mit regelmäßig höchstens fünf Arbeitnehmern, Auszubildende nicht mitgezählt. Einige Vorschriften wie die Klagefrist gelten trotzdem.
+    drifted: Die Vorschriften des Kündigungsschutzgesetzes gelten für alle Betriebe und Verwaltungen, unabhängig von der Zahl der Arbeitnehmer.
+    drift: support
+    note: reverses the small-business exemption
+
+  - id: kschg-03
+    question: Wie lange habe ich Zeit, gegen eine Kündigung zu klagen?
+    passage: Will ein Arbeitnehmer geltend machen, dass eine Kündigung sozial ungerechtfertigt oder aus anderen Gründen rechtsunwirksam ist, so muss er innerhalb von drei Wochen nach Zugang der schriftlichen Kündigung Klage beim Arbeitsgericht auf Feststellung erheben, dass das Arbeitsverhältnis durch die Kündigung nicht aufgelöst ist.
+    faithful: Sie müssen innerhalb von drei Wochen nach Zugang der schriftlichen Kündigung Klage beim Arbeitsgericht erheben.
+    paraphrase: Die Klage beim Arbeitsgericht muss spätestens drei Wochen, nachdem Ihnen die schriftliche Kündigung zugegangen ist, eingereicht sein.
+    drifted: Sie müssen innerhalb von vier Wochen nach Zugang der schriftlichen Kündigung Klage beim Arbeitsgericht erheben.
+    drift: qualifier
+    note: three weeks became four
+
+  - id: kschg-04
+    question: Ab wann läuft die Klagefrist, wenn eine Behörde der Kündigung zustimmen muss?
+    passage: Soweit die Kündigung der Zustimmung einer Behörde bedarf, läuft die Frist zur Anrufung des Arbeitsgerichts erst von der Bekanntgabe der Entscheidung der Behörde an den Arbeitnehmer ab.
+    faithful: Soweit die Kündigung der Zustimmung einer Behörde bedarf, läuft die Frist zur Anrufung des Arbeitsgerichts erst von der Bekanntgabe der Entscheidung der Behörde an Sie ab.
+    paraphrase: Dann beginnt die Frist erst, wenn Ihnen die Entscheidung der Behörde bekannt gegeben wurde.
+    drifted: Die Frist zur Anrufung des Arbeitsgerichts läuft immer ab Zugang der Kündigung.
+    drift: support
+    note: reverses the rule
+
+  - id: kschg-05
+    question: Bekomme ich bei einer betriebsbedingten Kündigung eine Abfindung?
+    passage: Kündigt der Arbeitgeber wegen dringender betrieblicher Erfordernisse nach § 1 Abs. 2 Satz 1 und erhebt der Arbeitnehmer bis zum Ablauf der Frist des § 4 Satz 1 keine Klage auf Feststellung, dass das Arbeitsverhältnis durch die Kündigung nicht aufgelöst ist, hat der Arbeitnehmer mit dem Ablauf der Kündigungsfrist Anspruch auf eine Abfindung.
+    faithful: Kündigt der Arbeitgeber wegen dringender betrieblicher Erfordernisse und erheben Sie bis zum Ablauf der Klagefrist keine Klage, haben Sie mit dem Ablauf der Kündigungsfrist Anspruch auf eine Abfindung.
+    paraphrase: Ja, wenn Sie nach einer betriebsbedingten Kündigung innerhalb der Klagefrist nicht klagen, steht Ihnen zum Ende der Kündigungsfrist eine Abfindung zu.
+    drifted: Kündigt der Arbeitgeber wegen dringender betrieblicher Erfordernisse, haben Sie Anspruch auf eine Abfindung.
+    drift: omission
+    note: drops the condition of not filing a claim
+
+  - id: kschg-06
+    question: Wie hoch ist die Abfindung bei einer betriebsbedingten Kündigung?
+    passage: Die Höhe der Abfindung beträgt 0,5 Monatsverdienste für jedes Jahr des Bestehens des Arbeitsverhältnisses.
+    faithful: Die Höhe der Abfindung beträgt 0,5 Monatsverdienste für jedes Jahr des Bestehens des Arbeitsverhältnisses.
+    paraphrase: Pro Beschäftigungsjahr gibt es einen halben Monatsverdienst.
+    drifted: Die Höhe der Abfindung beträgt ein Monatsverdienst für jedes Jahr des Bestehens des Arbeitsverhältnisses.
+    drift: qualifier
+    note: 0.5 became one
+
+  - id: kschg-07
+    question: Wie hoch kann eine Abfindung vom Gericht höchstens sein?
+    passage: Als Abfindung ist ein Betrag bis zu zwölf Monatsverdiensten festzusetzen.
+    faithful: Als Abfindung ist ein Betrag bis zu zwölf Monatsverdiensten festzusetzen.
+    paraphrase: Das Gericht kann bis zu zwölf Monatsgehälter als Abfindung festsetzen.
+    drifted: Als Abfindung ist ein Betrag von zwölf Monatsverdiensten festzusetzen.
+    drift: qualifier
+    note: drops "bis zu", turning a cap into a fixed amount
+
+  - id: kschg-08
+    question: Bis wann muss ich bei einer Änderungskündigung den Vorbehalt erklären?
+    passage: Diesen Vorbehalt muß der Arbeitnehmer dem Arbeitgeber innerhalb der Kündigungsfrist, spätestens jedoch innerhalb von drei Wochen nach Zugang der Kündigung erklären.
+    faithful: Diesen Vorbehalt müssen Sie innerhalb der Kündigungsfrist, spätestens jedoch innerhalb von drei Wochen nach Zugang der Kündigung erklären.
+    paraphrase: Innerhalb der Kündigungsfrist, höchstens aber drei Wochen nach Erhalt der Kündigung.
+    drifted: Diesen Vorbehalt müssen Sie innerhalb der Kündigungsfrist erklären.
+    drift: qualifier
+    note: drops the three-week cap
+
+  - id: kschg-09
+    question: Kann einem Betriebsratsmitglied gekündigt werden?
+    passage: Die Kündigung eines Mitglieds eines Betriebsrats, einer Jugend- und Auszubildendenvertretung, einer Bordvertretung oder eines Seebetriebsrats ist unzulässig, es sei denn, daß Tatsachen vorliegen, die den Arbeitgeber zur Kündigung aus wichtigem Grund ohne Einhaltung einer Kündigungsfrist berechtigen, und daß die nach § 103 des Betriebsverfassungsgesetzes erforderliche Zustimmung vorliegt oder durch gerichtliche Entscheidung ersetzt ist.
+    faithful: Die Kündigung eines Betriebsratsmitglieds ist unzulässig, es sei denn, daß Tatsachen vorliegen, die zur Kündigung aus wichtigem Grund ohne Einhaltung einer Kündigungsfrist berechtigen, und die erforderliche Zustimmung vorliegt oder durch gerichtliche Entscheidung ersetzt ist.
+    paraphrase: Nur aus wichtigem Grund fristlos, und auch dann nur mit Zustimmung des Betriebsrats oder deren Ersetzung durch ein Gericht.
+    drifted: Die Kündigung eines Betriebsratsmitglieds ist unzulässig.
+    drift: omission
+    note: drops the "es sei denn" exception
+
+  - id: kschg-10
+    question: Gilt der Kündigungsschutz im öffentlichen Dienst?
+    passage: Die Vorschriften des Ersten und Zweiten Abschnitts gelten für Betriebe und Verwaltungen des privaten und des öffentlichen Rechts, vorbehaltlich der Vorschriften des § 24 für die Seeschiffahrts-, Binnenschiffahrts- und Luftverkehrsbetriebe.
+    faithful: Die Vorschriften des Ersten und Zweiten Abschnitts gelten für Betriebe und Verwaltungen des privaten und des öffentlichen Rechts.
+    paraphrase: Ja, die Regeln gelten für private wie für öffentliche Betriebe und Verwaltungen.
+    drifted: Die Vorschriften gelten nur für Betriebe des privaten Rechts.
+    drift: support
+    note: wrongly excludes the public sector

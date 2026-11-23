@@ -1,0 +1,110 @@
+law: ArbZG
+source: arbzg.md
+cases:
+  - id: arbzg-01
+    question: Wie lange darf ich pro Tag höchstens arbeiten?
+    passage: Die werktägliche Arbeitszeit der Arbeitnehmer darf acht Stunden nicht überschreiten.
+    faithful: Die werktägliche Arbeitszeit darf acht Stunden nicht überschreiten.
+    paraphrase: An einem Werktag dürfen Sie in der Regel nicht länger als acht Stunden arbeiten.
+    drifted: Die werktägliche Arbeitszeit darf zehn Stunden nicht überschreiten.
+    drift: qualifier
+    note: eight hours became ten
+
+  - id: arbzg-02
+    question: Darf ich auch zehn Stunden am Tag arbeiten?
+    passage: Sie kann auf bis zu zehn Stunden nur verlängert werden, wenn innerhalb von sechs Kalendermonaten oder innerhalb von 24 Wochen im Durchschnitt acht Stunden werktäglich nicht überschritten werden.
+    faithful: Die Arbeitszeit kann auf bis zu zehn Stunden nur verlängert werden, wenn innerhalb von sechs Kalendermonaten oder innerhalb von 24 Wochen im Durchschnitt acht Stunden werktäglich nicht überschritten werden.
+    paraphrase: Ja, bis zu zehn Stunden sind möglich, solange Sie über sechs Monate oder 24 Wochen gerechnet im Schnitt nicht mehr als acht Stunden pro Werktag arbeiten.
+    drifted: Die Arbeitszeit kann auf bis zu zehn Stunden verlängert werden.
+    drift: omission
+    note: drops "nur ... wenn" and the averaging rule
+
+  - id: arbzg-03
+    question: Wie lange muss meine Pause bei einem Acht-Stunden-Tag sein?
+    passage: Die Arbeit ist durch im voraus feststehende Ruhepausen von mindestens 30 Minuten bei einer Arbeitszeit von mehr als sechs bis zu neun Stunden und 45 Minuten bei einer Arbeitszeit von mehr als neun Stunden insgesamt zu unterbrechen.
+    faithful: Bei einer Arbeitszeit von mehr als sechs bis zu neun Stunden ist die Arbeit durch Ruhepausen von mindestens 30 Minuten zu unterbrechen.
+    paraphrase: Bei acht Stunden Arbeit stehen Ihnen insgesamt wenigstens 30 Minuten Pause zu.
+    drifted: Die Arbeit ist durch Ruhepausen von 15 Minuten zu unterbrechen.
+    drift: qualifier
+    note: 30 minutes became 15
+
+  - id: arbzg-04
+    question: Wie viel Pause brauche ich, wenn ich zehn Stunden arbeite?
+    passage: Die Arbeit ist durch im voraus feststehende Ruhepausen von mindestens 30 Minuten bei einer Arbeitszeit von mehr als sechs bis zu neun Stunden und 45 Minuten bei einer Arbeitszeit von mehr als neun Stunden insgesamt zu unterbrechen.
+    faithful: Bei einer Arbeitszeit von mehr als neun Stunden ist die Arbeit durch Ruhepausen von insgesamt 45 Minuten zu unterbrechen.
+    paraphrase: Wer mehr als neun Stunden arbeitet, muss insgesamt eine Dreiviertelstunde Pause machen.
+    drifted: Bei einer Arbeitszeit von mehr als neun Stunden ist die Arbeit durch Ruhepausen von insgesamt 30 Minuten zu unterbrechen.
+    drift: qualifier
+    note: 45 minutes became 30
+
+  - id: arbzg-05
+    question: Darf ich meine Pause aufteilen?
+    passage: Die Ruhepausen nach Satz 1 können in Zeitabschnitte von jeweils mindestens 15 Minuten aufgeteilt werden.
+    faithful: Die Ruhepausen können in Zeitabschnitte von jeweils mindestens 15 Minuten aufgeteilt werden.
+    paraphrase: Ja, solange jeder Teil der Pause mindestens eine Viertelstunde dauert.
+    drifted: Die Ruhepausen können beliebig aufgeteilt werden.
+    drift: qualifier
+    note: drops "von jeweils mindestens 15 Minuten"
+
+  - id: arbzg-06
+    question: Wie lange darf ich ohne Pause am Stück arbeiten?
+    passage: Länger als sechs Stunden hintereinander dürfen Arbeitnehmer nicht ohne Ruhepause beschäftigt werden.
+    faithful: Länger als sechs Stunden hintereinander dürfen Sie nicht ohne Ruhepause beschäftigt werden.
+    paraphrase: Spätestens nach sechs Stunden am Stück muss eine Pause kommen.
+    drifted: Länger als acht Stunden hintereinander dürfen Sie nicht ohne Ruhepause beschäftigt werden.
+    drift: qualifier
+    note: six hours became eight
+
+  - id: arbzg-07
+    question: Wie lange muss die Ruhezeit zwischen zwei Arbeitstagen sein?
+    passage: Die Arbeitnehmer müssen nach Beendigung der täglichen Arbeitszeit eine ununterbrochene Ruhezeit von mindestens elf Stunden haben.
+    faithful: Sie müssen nach Beendigung der täglichen Arbeitszeit eine ununterbrochene Ruhezeit von mindestens elf Stunden haben.
+    paraphrase: Zwischen Feierabend und Arbeitsbeginn am nächsten Tag müssen wenigstens elf Stunden am Stück liegen.
+    drifted: Sie müssen nach Beendigung der täglichen Arbeitszeit eine Ruhezeit von acht Stunden haben.
+    drift: qualifier
+    note: eleven hours became eight
+
+  - id: arbzg-08
+    question: Darf die Ruhezeit im Krankenhaus kürzer sein?
+    passage: Die Dauer der Ruhezeit des Absatzes 1 kann in Krankenhäusern und anderen Einrichtungen zur Behandlung, Pflege und Betreuung von Personen, in Gaststätten und anderen Einrichtungen zur Bewirtung und Beherbergung, in Verkehrsbetrieben, beim Rundfunk sowie in der Landwirtschaft und in der Tierhaltung um bis zu eine Stunde verkürzt werden, wenn jede Verkürzung der Ruhezeit innerhalb eines Kalendermonats oder innerhalb von vier Wochen durch Verlängerung einer anderen Ruhezeit auf mindestens zwölf Stunden ausgeglichen wird.
+    faithful: In Krankenhäusern kann die Ruhezeit um bis zu eine Stunde verkürzt werden, wenn jede Verkürzung innerhalb eines Kalendermonats oder innerhalb von vier Wochen durch Verlängerung einer anderen Ruhezeit auf mindestens zwölf Stunden ausgeglichen wird.
+    paraphrase: Ja, um höchstens eine Stunde, sofern das innerhalb eines Monats oder vier Wochen durch eine andere Ruhezeit von mindestens zwölf Stunden ausgeglichen wird.
+    drifted: In Krankenhäusern kann die Ruhezeit um bis zu eine Stunde verkürzt werden.
+    drift: omission
+    note: drops the compensation condition
+
+  - id: arbzg-09
+    question: Wie lange dürfen Nachtarbeitnehmer pro Tag arbeiten?
+    passage: Die werktägliche Arbeitszeit der Nachtarbeitnehmer darf acht Stunden nicht überschreiten. Sie kann auf bis zu zehn Stunden nur verlängert werden, wenn abweichend von § 3 innerhalb von einem Kalendermonat oder innerhalb von vier Wochen im Durchschnitt acht Stunden werktäglich nicht überschritten werden.
+    faithful: Die werktägliche Arbeitszeit der Nachtarbeitnehmer darf acht Stunden nicht überschreiten. Sie kann auf bis zu zehn Stunden nur verlängert werden, wenn innerhalb von einem Kalendermonat oder innerhalb von vier Wochen im Durchschnitt acht Stunden werktäglich nicht überschritten werden.
+    paraphrase: Grundsätzlich acht Stunden. Bis zu zehn sind nur erlaubt, wenn im Schnitt eines Monats oder von vier Wochen acht Stunden pro Werktag nicht überschritten werden.
+    drifted: Die werktägliche Arbeitszeit der Nachtarbeitnehmer darf acht Stunden nicht überschreiten. Sie kann auf bis zu zehn Stunden nur verlängert werden, wenn innerhalb von sechs Kalendermonaten im Durchschnitt acht Stunden werktäglich nicht überschritten werden.
+    drift: qualifier
+    note: swaps in the six-month window that applies to day workers
+
+  - id: arbzg-10
+    question: Darf ich sonntags beschäftigt werden?
+    passage: Arbeitnehmer dürfen an Sonn- und gesetzlichen Feiertagen von 0 bis 24 Uhr nicht beschäftigt werden.
+    faithful: Arbeitnehmer dürfen an Sonn- und gesetzlichen Feiertagen von 0 bis 24 Uhr nicht beschäftigt werden.
+    paraphrase: Grundsätzlich nein, an Sonn- und Feiertagen ist Beschäftigung den ganzen Tag über verboten.
+    drifted: Arbeitnehmer dürfen an Sonn- und gesetzlichen Feiertagen nur bis 12 Uhr beschäftigt werden.
+    drift: support
+    note: invents a noon limit
+
+  - id: arbzg-11
+    question: Wie viele Sonntage im Jahr müssen frei bleiben?
+    passage: Mindestens 15 Sonntage im Jahr müssen beschäftigungsfrei bleiben.
+    faithful: Mindestens 15 Sonntage im Jahr müssen beschäftigungsfrei bleiben.
+    paraphrase: Wenigstens 15 Sonntage pro Jahr bleiben Ihnen arbeitsfrei.
+    drifted: Mindestens 12 Sonntage im Jahr müssen beschäftigungsfrei bleiben.
+    drift: qualifier
+    note: 15 became 12
+
+  - id: arbzg-12
+    question: Bekomme ich einen Ersatzruhetag, wenn ich sonntags arbeite?
+    passage: Werden Arbeitnehmer an einem Sonntag beschäftigt, müssen sie einen Ersatzruhetag haben, der innerhalb eines den Beschäftigungstag einschließenden Zeitraums von zwei Wochen zu gewähren ist.
+    faithful: Werden Sie an einem Sonntag beschäftigt, müssen Sie einen Ersatzruhetag haben, der innerhalb eines den Beschäftigungstag einschließenden Zeitraums von zwei Wochen zu gewähren ist.
+    paraphrase: Ja, für Sonntagsarbeit gibt es einen freien Ersatztag innerhalb von zwei Wochen.
+    drifted: Werden Sie an einem Sonntag beschäftigt, müssen Sie einen Ersatzruhetag haben.
+    drift: qualifier
+    note: drops the two-week window

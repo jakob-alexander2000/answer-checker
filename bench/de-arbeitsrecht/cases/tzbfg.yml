@@ -1,0 +1,92 @@
+law: TzBfG
+source: tzbfg.md
+cases:
+  - id: tzbfg-01
+    question: Kann ich verlangen, in Teilzeit zu arbeiten?
+    passage: Ein Arbeitnehmer, dessen Arbeitsverhältnis länger als sechs Monate bestanden hat, kann verlangen, dass seine vertraglich vereinbarte Arbeitszeit verringert wird.
+    faithful: Ein Arbeitnehmer, dessen Arbeitsverhältnis länger als sechs Monate bestanden hat, kann verlangen, dass seine vertraglich vereinbarte Arbeitszeit verringert wird.
+    paraphrase: Ja, sobald Ihr Arbeitsverhältnis mehr als sechs Monate besteht, können Sie eine Verringerung Ihrer Arbeitszeit verlangen.
+    drifted: Jeder Arbeitnehmer kann verlangen, dass seine vertraglich vereinbarte Arbeitszeit verringert wird.
+    drift: qualifier
+    note: drops the six-month condition and widens to every employee
+
+  - id: tzbfg-02
+    question: Gilt der Teilzeitanspruch auch in kleinen Firmen?
+    passage: Für den Anspruch auf Verringerung der Arbeitszeit gilt die Voraussetzung, dass der Arbeitgeber, unabhängig von der Anzahl der Personen in Berufsbildung, in der Regel mehr als 15 Arbeitnehmer beschäftigt.
+    faithful: Für den Anspruch auf Verringerung der Arbeitszeit gilt die Voraussetzung, dass der Arbeitgeber in der Regel mehr als 15 Arbeitnehmer beschäftigt.
+    paraphrase: Nein, der Anspruch besteht nur, wenn Ihr Arbeitgeber regelmäßig mehr als 15 Leute beschäftigt, Auszubildende nicht mitgezählt.
+    drifted: Der Anspruch auf Verringerung der Arbeitszeit gilt unabhängig von der Größe des Arbeitgebers.
+    drift: support
+    note: reverses the size threshold
+
+  - id: tzbfg-03
+    question: Wie früh muss ich den Teilzeitwunsch anmelden?
+    passage: Der Arbeitnehmer muss die Verringerung seiner Arbeitszeit und den Umfang der Verringerung spätestens drei Monate vor deren Beginn in Textform geltend machen.
+    faithful: Sie müssen die Verringerung Ihrer Arbeitszeit und den Umfang der Verringerung spätestens drei Monate vor deren Beginn in Textform geltend machen.
+    paraphrase: Spätestens drei Monate vorher, und zwar in Textform, mit Angabe, um wie viel die Arbeitszeit sinken soll.
+    drifted: Sie müssen die Verringerung Ihrer Arbeitszeit vor deren Beginn geltend machen.
+    drift: qualifier
+    note: drops the three-month deadline and the form
+
+  - id: tzbfg-04
+    question: Muss mein Arbeitgeber der Teilzeit zustimmen?
+    passage: Der Arbeitgeber hat der Verringerung der Arbeitszeit zuzustimmen und ihre Verteilung entsprechend den Wünschen des Arbeitnehmers festzulegen, soweit betriebliche Gründe nicht entgegenstehen.
+    faithful: Der Arbeitgeber hat der Verringerung der Arbeitszeit zuzustimmen und ihre Verteilung entsprechend Ihren Wünschen festzulegen, soweit betriebliche Gründe nicht entgegenstehen.
+    paraphrase: Ja, außer es sprechen betriebliche Gründe dagegen. Dann kann er ablehnen.
+    drifted: Der Arbeitgeber hat der Verringerung der Arbeitszeit zuzustimmen und ihre Verteilung entsprechend Ihren Wünschen festzulegen.
+    drift: omission
+    note: drops "soweit betriebliche Gründe nicht entgegenstehen"
+
+  - id: tzbfg-05
+    question: Bis wann muss mein Arbeitgeber über den Teilzeitantrag entscheiden?
+    passage: Die Entscheidung über die Verringerung der Arbeitszeit und ihre Verteilung hat der Arbeitgeber dem Arbeitnehmer spätestens einen Monat vor dem gewünschten Beginn der Verringerung in Textform mitzuteilen.
+    faithful: Der Arbeitgeber hat Ihnen die Entscheidung spätestens einen Monat vor dem gewünschten Beginn der Verringerung in Textform mitzuteilen.
+    paraphrase: Er muss Ihnen seine Entscheidung mindestens einen Monat vor dem gewünschten Start schriftlich in Textform geben.
+    drifted: Der Arbeitgeber hat Ihnen die Entscheidung spätestens zwei Wochen vor dem gewünschten Beginn der Verringerung mitzuteilen.
+    drift: qualifier
+    note: one month became two weeks
+
+  - id: tzbfg-06
+    question: Dürfen Teilzeitkräfte schlechter behandelt werden?
+    passage: Ein teilzeitbeschäftigter Arbeitnehmer darf wegen der Teilzeitarbeit nicht schlechter behandelt werden als ein vergleichbarer vollzeitbeschäftigter Arbeitnehmer, es sei denn, dass sachliche Gründe eine unterschiedliche Behandlung rechtfertigen.
+    faithful: Ein teilzeitbeschäftigter Arbeitnehmer darf wegen der Teilzeitarbeit nicht schlechter behandelt werden als ein vergleichbarer vollzeitbeschäftigter Arbeitnehmer, es sei denn, dass sachliche Gründe eine unterschiedliche Behandlung rechtfertigen.
+    paraphrase: Nein, nicht wegen der Teilzeit selbst. Eine Ungleichbehandlung ist nur mit sachlichem Grund erlaubt.
+    drifted: Ein teilzeitbeschäftigter Arbeitnehmer darf wegen der Teilzeitarbeit nicht schlechter behandelt werden als ein vergleichbarer vollzeitbeschäftigter Arbeitnehmer.
+    drift: omission
+    note: drops the "es sei denn" exception
+
+  - id: tzbfg-07
+    question: Wie lange darf ein Arbeitsvertrag ohne Grund befristet sein?
+    passage: Die kalendermäßige Befristung eines Arbeitsvertrages ohne Vorliegen eines sachlichen Grundes ist bis zur Dauer von zwei Jahren zulässig;
+    faithful: Die kalendermäßige Befristung eines Arbeitsvertrages ohne Vorliegen eines sachlichen Grundes ist bis zur Dauer von zwei Jahren zulässig.
+    paraphrase: Ohne sachlichen Grund darf ein Vertrag höchstens zwei Jahre befristet werden.
+    drifted: Die kalendermäßige Befristung eines Arbeitsvertrages ohne Vorliegen eines sachlichen Grundes ist bis zur Dauer von drei Jahren zulässig.
+    drift: qualifier
+    note: two years became three
+
+  - id: tzbfg-08
+    question: Wie oft darf ein befristeter Vertrag ohne Grund verlängert werden?
+    passage: bis zu dieser Gesamtdauer von zwei Jahren ist auch die höchstens dreimalige Verlängerung eines kalendermäßig befristeten Arbeitsvertrages zulässig.
+    faithful: Bis zu der Gesamtdauer von zwei Jahren ist auch die höchstens dreimalige Verlängerung eines kalendermäßig befristeten Arbeitsvertrages zulässig.
+    paraphrase: Innerhalb der zwei Jahre darf der Vertrag maximal drei Mal verlängert werden.
+    drifted: Ein kalendermäßig befristeter Arbeitsvertrag darf beliebig oft verlängert werden.
+    drift: qualifier
+    note: drops the limit of three extensions and the two-year cap
+
+  - id: tzbfg-09
+    question: Darf mein früherer Arbeitgeber mich ohne Grund befristet einstellen?
+    passage: Eine Befristung nach Satz 1 ist nicht zulässig, wenn mit demselben Arbeitgeber bereits zuvor ein befristetes oder unbefristetes Arbeitsverhältnis bestanden hat.
+    faithful: Eine Befristung ohne sachlichen Grund ist nicht zulässig, wenn mit demselben Arbeitgeber bereits zuvor ein befristetes oder unbefristetes Arbeitsverhältnis bestanden hat.
+    paraphrase: Nein, eine sachgrundlose Befristung scheidet aus, wenn Sie schon einmal bei demselben Arbeitgeber angestellt waren.
+    drifted: Eine Befristung ohne sachlichen Grund ist zulässig, auch wenn mit demselben Arbeitgeber bereits zuvor ein Arbeitsverhältnis bestanden hat.
+    drift: support
+    note: reverses the ban on prior employment
+
+  - id: tzbfg-10
+    question: Wie lange habe ich Zeit, gegen eine unwirksame Befristung zu klagen?
+    passage: Will der Arbeitnehmer geltend machen, dass die Befristung eines Arbeitsvertrages rechtsunwirksam ist, so muss er innerhalb von drei Wochen nach dem vereinbarten Ende des befristeten Arbeitsvertrages Klage beim Arbeitsgericht auf Feststellung erheben, dass das Arbeitsverhältnis auf Grund der Befristung nicht beendet ist.
+    faithful: Sie müssen innerhalb von drei Wochen nach dem vereinbarten Ende des befristeten Arbeitsvertrages Klage beim Arbeitsgericht erheben.
+    paraphrase: Die Klage muss spätestens drei Wochen nach dem vereinbarten Vertragsende beim Arbeitsgericht eingehen.
+    drifted: Sie müssen innerhalb von drei Monaten nach dem vereinbarten Ende des befristeten Arbeitsvertrages Klage beim Arbeitsgericht erheben.
+    drift: qualifier
+    note: three weeks became three months

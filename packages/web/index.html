@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>answer-checker playground</title>
+    <meta name="description" content="Check a document chatbot's answer against its source. Dropped conditions show in red. Runs in the page." />
+  </head>
+  <body>
+    <header class="bar">
+      <span class="mono"><strong>answer-checker</strong> / playground</span>
+      <a class="mono" href="https://github.com/jakob-alexander2000/answer-checker">Source</a>
+    </header>
+    <main>
+      <section class="intro">
+        <h1>Check an answer against its source.</h1>
+        <p>Paste the passage your chatbot read and the answer it gave. Each sentence is matched to a passage, and any condition the answer dropped shows in red. The check runs in this page, so nothing you paste is sent anywhere.</p>
+      </section>
+
+      <section class="samples" aria-labelledby="samples-label">
+        <h2 id="samples-label" class="label">Samples</h2>
+        <ol id="samples" class="sample-list"></ol>
+      </section>
+
+      <form id="form" class="sheet" autocomplete="off">
+        <label class="field">
+          <span class="label">Question</span>
+          <input id="question" name="question" type="text" />
+        </label>
+        <label class="field">
+          <span class="label">Source passages <span class="hint">one per paragraph</span></span>
+          <textarea id="sources" name="sources" rows="6"></textarea>
+        </label>
+        <label class="field">
+          <span class="label">Answer</span>
+          <textarea id="answer" name="answer" rows="4"></textarea>
+        </label>
+        <div class="swap" id="swap-row" hidden>
+          <button type="button" id="swap" class="button"></button>
+        </div>
+        <details class="field">
+          <summary class="label">Whole document <span class="hint">optional, helps the Scope check</span></summary>
+          <textarea id="document" name="document" rows="6"></textarea>
+        </details>
+      </form>
+
+      <section id="result" class="result" aria-live="polite"></section>
+    </main>
+    <footer class="foot mono">
+      <span id="engine"></span>
+      <span>MIT. Synthetic sample handbooks, not real policies.</span>
+    </footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

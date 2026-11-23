@@ -3,18 +3,29 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>answer-checker playground</title>
+    <title>answer-checker</title>
     <meta name="description" content="Check a document chatbot's answer against its source. Dropped conditions show in red. Runs in the page." />
   </head>
   <body>
     <header class="bar">
-      <span class="mono"><strong>answer-checker</strong> / playground</span>
-      <a class="mono" href="https://github.com/jakob-alexander2000/answer-checker">Source</a>
+      <span class="mono"><strong>answer-checker</strong> 0.1</span>
+      <nav class="mono nav" aria-label="Sections">
+        <a href="#check">Check</a>
+        <a href="#use">Use</a>
+        <a href="#talk">Hosted</a>
+        <a href="https://github.com/jakob-alexander2000/answer-checker">GitHub</a>
+      </nav>
     </header>
     <main>
       <section class="intro">
-        <h1>Check an answer against its source.</h1>
-        <p>Paste the passage your chatbot read and the answer it gave. Each sentence is matched to a passage, and any condition the answer dropped shows in red. The check runs in this page, so nothing you paste is sent anywhere.</p>
+        <h1>Check every answer before it reaches a user.</h1>
+        <p>Your chatbot reads the handbook and says employees get 30 days of leave. The handbook says full-time employees get 30 days, after the probation period. answer-checker reads each answer against the passages it came from and flags the condition it dropped. English and German. Free to self-host, and nothing leaves your servers.</p>
+      </section>
+
+      <section id="check" class="index-head" aria-labelledby="check-title">
+        <span class="mono">01</span>
+        <h2 id="check-title">Live check</h2>
+        <p>Pick a sample or paste your own. The check runs in this page, so nothing you paste is sent anywhere.</p>
       </section>
 
       <section class="samples" aria-labelledby="samples-label">
@@ -45,10 +56,39 @@
       </form>
 
       <section id="result" class="result" aria-live="polite"></section>
+
+      <section class="index-head" aria-labelledby="checks-title">
+        <span class="mono">02</span>
+        <h2 id="checks-title">What it checks</h2>
+      </section>
+      <ol class="rows spec">
+        <li class="row"><span class="row-name">Support</span><span class="row-detail">Every sentence in the answer is covered by a passage. Invented sentences fail.</span></li>
+        <li class="row"><span class="row-name">Scope</span><span class="row-detail">The answer doesn't widen who a rule is for. "All employees" fails a rule that applies only to full-time staff.</span></li>
+        <li class="row"><span class="row-name">Qualifier</span><span class="row-detail">Limits, numbers and amounts survive. "Nach der Probezeit", "bis zu 1.200 €", "after the probation period".</span></li>
+        <li class="row"><span class="row-name">Omission</span><span class="row-detail">Exceptions survive. "Unless", "es sei denn", "außer", "sofern" and the clause after them.</span></li>
+      </ol>
+      <p class="aside"><a href="https://github.com/jakob-alexander2000/answer-checker/blob/main/docs/how-it-judges.md">How it judges</a> and <a href="https://github.com/jakob-alexander2000/answer-checker/blob/main/docs/limits.md">what it misses</a>. It reads words, not meaning, so a correct paraphrase can fail. The limits page shows a real case.</p>
+
+      <section id="use" class="index-head" aria-labelledby="use-title">
+        <span class="mono">03</span>
+        <h2 id="use-title">Use it</h2>
+      </section>
+      <ol class="rows spec">
+        <li class="row"><span class="row-name">Self-host</span><span class="row-detail">One Docker image with this page and the API. Free, MIT licensed. No keys, no model, no calls out. <a href="https://github.com/jakob-alexander2000/answer-checker/blob/main/docs/quickstart.md">Quickstart</a></span></li>
+        <li class="row"><span class="row-name">In CI</span><span class="row-detail">A GitHub Action runs your bot over a fixed set of questions on every pull request and fails the build when an answer gets worse. <a href="https://github.com/jakob-alexander2000/answer-checker/blob/main/docs/action.md">Action</a></span></li>
+        <li class="row"><span class="row-name">API</span><span class="row-detail"><code>POST /v1/check</code> with a question, an answer and its sources. Same input, same result, every time. <a href="https://github.com/jakob-alexander2000/answer-checker/blob/main/docs/api.md">Reference</a></span></li>
+      </ol>
+
+      <section id="talk" class="index-head" aria-labelledby="talk-title">
+        <span class="mono">04</span>
+        <h2 id="talk-title">Hosted, and audits</h2>
+        <p>If you'd rather not run it yourself, or want your chatbot's answers checked and written up by a person, write to me. I'm looking for a few teams with an internal chatbot over German documents to try it early, free, in return for feedback.</p>
+        <p><a class="button link-button" href="mailto:jdevacc2000@gmail.com?subject=answer-checker">jdevacc2000@gmail.com</a></p>
+      </section>
     </main>
     <footer class="foot mono">
       <span id="engine"></span>
-      <span>MIT. Synthetic sample handbooks, not real policies.</span>
+      <span>MIT. The sample handbooks are synthetic, not real policies.</span>
     </footer>
     <script type="module" src="/src/main.ts"></script>
   </body>

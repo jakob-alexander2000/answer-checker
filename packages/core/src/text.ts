@@ -70,7 +70,7 @@ export const STOP = new Set([
   "meine", "unser", "unsere", "dies", "diese", "dieser", "dieses",
 ]);
 
-export const SUPPORT_MIN = 0.72;
+export const SUPPORT_MIN = 0.6;
 export const RELEVANT_FLOOR = 0.45;
 
 export function tokenize(text: string): string[] {

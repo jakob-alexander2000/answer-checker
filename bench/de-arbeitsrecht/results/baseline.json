@@ -1,0 +1,131 @@
+{
+  "engine": {
+    "name": "answer-checker",
+    "version": "0.1.0"
+  },
+  "summary": {
+    "all": {
+      "cases": 70,
+      "drifted": {
+        "caught": 29,
+        "caughtByIntended": 24,
+        "total": 70
+      },
+      "faithful": {
+        "passed": 62,
+        "total": 70
+      },
+      "paraphrase": {
+        "passed": 2,
+        "total": 70
+      },
+      "failPrecision": 0.2761904761904762,
+      "byDrift": {
+        "support": {
+          "caught": 14,
+          "total": 22
+        },
+        "scope": {
+          "caught": 0,
+          "total": 0
+        },
+        "qualifier": {
+          "caught": 7,
+          "total": 32
+        },
+        "omission": {
+          "caught": 8,
+          "total": 16
+        }
+      },
+      "falseAlarms": {
+        "support": 73,
+        "scope": 0,
+        "qualifier": 6,
+        "omission": 7
+      }
+    },
+    "dev": {
+      "cases": 44,
+      "drifted": {
+        "caught": 21,
+        "caughtByIntended": 16,
+        "total": 44
+      },
+      "faithful": {
+        "passed": 41,
+        "total": 44
+      },
+      "paraphrase": {
+        "passed": 0,
+        "total": 44
+      },
+      "failPrecision": 0.3088235294117647,
+      "byDrift": {
+        "support": {
+          "caught": 8,
+          "total": 11
+        },
+        "scope": {
+          "caught": 0,
+          "total": 0
+        },
+        "qualifier": {
+          "caught": 7,
+          "total": 23
+        },
+        "omission": {
+          "caught": 6,
+          "total": 10
+        }
+      },
+      "falseAlarms": {
+        "support": 45,
+        "scope": 0,
+        "qualifier": 6,
+        "omission": 4
+      }
+    },
+    "holdout": {
+      "cases": 26,
+      "drifted": {
+        "caught": 8,
+        "caughtByIntended": 8,
+        "total": 26
+      },
+      "faithful": {
+        "passed": 21,
+        "total": 26
+      },
+      "paraphrase": {
+        "passed": 2,
+        "total": 26
+      },
+      "failPrecision": 0.21621621621621623,
+      "byDrift": {
+        "support": {
+          "caught": 6,
+          "total": 11
+        },
+        "scope": {
+          "caught": 0,
+          "total": 0
+        },
+        "qualifier": {
+          "caught": 0,
+          "total": 9
+        },
+        "omission": {
+          "caught": 2,
+          "total": 6
+        }
+      },
+      "falseAlarms": {
+        "support": 28,
+        "scope": 0,
+        "qualifier": 0,
+        "omission": 3
+      }
+    }
+  }
+}

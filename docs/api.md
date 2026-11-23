@@ -50,7 +50,7 @@ The whole body may be at most 200 kB.
     { "text": "Vollzeitbeschäftigte erhalten 30 Urlaubstage pro Kalenderjahr.", "start": 0, "end": 62, "sourceIndex": 0, "sourceId": "handbuch-4.2", "coverage": 1, "supported": true }
   ],
   "voice": null,
-  "engine": { "name": "answer-checker", "version": "0.1.0" }
+  "engine": { "name": "answer-checker", "version": "0.2.0" }
 }
 ```
 
@@ -72,7 +72,7 @@ The whole body may be at most 200 kB.
 
 ## GET /health
 
-`{ "ok": true, "engine": { "name": "answer-checker", "version": "0.1.0" } }`
+`{ "ok": true, "engine": { "name": "answer-checker", "version": "0.2.0" } }`
 
 ## Configuration
 

@@ -1,5 +1,6 @@
 law: MuSchG
 source: muschg_2018.md
+split: holdout
 cases:
   - id: muschg-01
     question: Ab wann darf ich vor der Geburt nicht mehr arbeiten?

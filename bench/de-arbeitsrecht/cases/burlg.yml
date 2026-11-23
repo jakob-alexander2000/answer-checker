@@ -1,5 +1,6 @@
 law: BUrlG
 source: burlg.md
+split: dev
 cases:
   - id: burlg-01
     question: Wie viel Urlaub steht mir gesetzlich mindestens zu?

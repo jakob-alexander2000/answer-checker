@@ -1,8 +1,8 @@
 import { checkAnswer, type CheckId } from "@answer-checker/core";
-import type { BenchCase } from "./load";
+import type { BenchCase, Split } from "./load";
 
 export type Kind = "faithful" | "paraphrase" | "drifted";
-export type Row = { id: string; law: string; kind: Kind; verdict: "pass" | "fail"; failed: CheckId[]; drift: CheckId };
+export type Row = { id: string; law: string; split: Split; kind: Kind; verdict: "pass" | "fail"; failed: CheckId[]; drift: CheckId };
 
 export type Summary = {
   cases: number;
@@ -23,7 +23,7 @@ export function runBench(cases: BenchCase[]): Row[] {
   for (const c of cases) {
     for (const kind of ["faithful", "paraphrase", "drifted"] as const) {
       const out = checkAnswer({ question: c.question, answer: c[kind], sources: [c.passage], document: c.document });
-      rows.push({ id: c.id, law: c.law, kind, verdict: out.verdict, failed: out.failed, drift: c.drift });
+      rows.push({ id: c.id, law: c.law, split: c.split, kind, verdict: out.verdict, failed: out.failed, drift: c.drift });
     }
   }
   return rows;

@@ -14,7 +14,11 @@ export type BenchCase = {
   drift: CheckId;
   note: string;
   document: string;
+  /** "dev" cases may be looked at while tuning the engine. "holdout" cases may not. */
+  split: Split;
 };
+
+export type Split = "dev" | "holdout";
 
 const CHECKS = new Set(["support", "scope", "qualifier", "omission"]);
 
@@ -27,7 +31,9 @@ export function loadBench(dir: string): BenchCase[] {
   const out: BenchCase[] = [];
   const seen = new Set<string>();
   for (const file of readdirSync(join(dir, "cases")).filter((f) => f.endsWith(".yml")).sort()) {
-    const raw = parse(readFileSync(join(dir, "cases", file), "utf8")) as { law: string; source: string; cases: Record<string, string>[] };
+    const raw = parse(readFileSync(join(dir, "cases", file), "utf8")) as { law: string; source: string; split?: string; cases: Record<string, string>[] };
+    const split = raw.split ?? "dev";
+    if (split !== "dev" && split !== "holdout") throw new Error(`${file}: split must be dev or holdout`);
     const document = squash(readFileSync(join(dir, "sources", raw.source), "utf8"));
     for (const item of raw.cases) {
       const where = `${file}: ${item.id ?? "?"}`;
@@ -50,6 +56,7 @@ export function loadBench(dir: string): BenchCase[] {
         drift: item.drift as CheckId,
         note: item.note!,
         document,
+        split,
       });
     }
   }

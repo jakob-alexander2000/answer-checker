@@ -109,7 +109,8 @@ describe("other checks", () => {
     const scope = checkById(naive.card, "scope");
     expect(scope.status).toBe("fail");
     expect(scope.spans[0]?.text.toLowerCase()).toContain("applies only to");
-    expect(checkById(naive.card, "support").status).toBe("pass");
+    // The passage says "Not every worker gets these benefits", so Support also sees the reversal.
+    expect(checkById(naive.card, "support").status).toBe("fail");
   });
 
   it("fails omission when unless is dropped and keeps the number", () => {

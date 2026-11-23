@@ -24,6 +24,7 @@ Optional extras:
 - **Playground**: `docker build -t answer-checker . && docker run --rm -p 8787:8787 answer-checker`, then open http://localhost:8787. Six samples in English and German, or paste your own.
 - **API**: `POST /v1/check` on the same port. See [docs/api.md](docs/api.md).
 - **GitHub Action**: run your bot over a fixed set of questions on every pull request and fail the build when an answer gets worse. See [docs/action.md](docs/action.md).
+- **Audit**: check a log of real answers, have a person review every flag, and get a report with a list of changes. See [docs/audit.md](docs/audit.md) and the [sample report](examples/sample-audit/report.html).
 - **Library**: `checkAnswer({ question, answer, sources })` from `@answer-checker/core`.
 
 ```ts
@@ -48,8 +49,11 @@ packages/core     checks, voice, claim mode, samples, tests
 packages/api      POST /v1/check, rate limit, node server
 packages/web      the playground
 packages/action   the GitHub Action (action.yml at the root)
-examples/         a checks.yml built from the samples
-docs/             quickstart, API, action, how it judges, limits
+packages/audit    audit reports: log in, reviewed HTML and Markdown report out
+packages/bench    runs the benches in bench/ and writes their results
+bench/            de-arbeitsrecht: 70 questions from German labour law, with results
+examples/         a checks.yml built from the samples, and a sample audit
+docs/             quickstart, API, action, audit, how it judges, limits
 ```
 
 ## Where it came from
@@ -58,6 +62,6 @@ The checks started as [Retrieval Autopsy](https://github.com/jakob-alexander2000
 
 ## Limits
 
-The checks are lexical, so a correct paraphrase can fail and the German patterns are still young. [docs/limits.md](docs/limits.md) has the full list.
+The checks compare normalised words, not meaning, so some correct paraphrases still fail. The [bench results](bench/de-arbeitsrecht/results/RESULTS.md) show how often, and [docs/limits.md](docs/limits.md) has the full list.
 
 MIT licensed.

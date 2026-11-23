@@ -7,10 +7,12 @@
   "scripts": {
     "bench": "tsx src/cli.ts",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "sample-audit": "tsx src/sample-audit.ts && npm run audit --workspace @answer-checker/audit -- ../../examples/sample-audit/audit.yml"
   },
   "dependencies": {
     "@answer-checker/core": "0.2.0",
-    "yaml": "^2.6.0"
+    "yaml": "^2.6.0",
+    "@answer-checker/audit": "0.2.0"
   }
 }

@@ -1,0 +1,20 @@
+# Sample audit. Rebuild with: npm run sample-audit --workspace @answer-checker/bench
+title: Arbeitsrecht-Fragen, Beispielbericht
+client: Beispiel (kein Kunde)
+bot: Demo-Log aus dem Testsatz de-arbeitsrecht
+date: 2026-11-23
+lang: de
+reviewer: Musterlösung des Testsatzes (im Beispiel statt einer Person)
+scope: >-
+  Dies ist ein Beispielbericht. Das geprüfte System ist kein echter Chatbot: Für jede der 70 Fragen des
+  öffentlichen Testsatzes de-arbeitsrecht wurde mit festem Zufallswert eine der drei handgeschriebenen
+  Antworten gewählt, richtig, umformuliert oder mit einem eingebauten Fehler. 44 der 70 Fragen wurden
+  zum Abstimmen des Werkzeugs benutzt, die Trefferquote hier ist deshalb besser als bei einem fremden
+  System. Die Quellen sind Gesetzestexte aus einem älteren öffentlichen Spiegel und dienen nur als
+  Testdokumente.
+log: log.jsonl
+review: review.yml
+out: .
+benchmark: ../../bench/de-arbeitsrecht/results/latest.json
+benchmark_name: de-arbeitsrecht
+benchmark_url: https://github.com/jakob-alexander2000/answer-checker/tree/main/bench/de-arbeitsrecht
